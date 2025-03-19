@@ -2,7 +2,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: smokewhite;
+    background-color: whitesmoke;
     font: 700 3vh 'Poppins', sans-serif;
 }
 #navbarTogglerDemo02 {
@@ -22,5 +22,10 @@
     
     .navbar-toggler {
         margin: 2vh 1vh 2vh 1vh;
+    }
+    #gtz-logo {
+        margin-left: 0.5vh;
+        width: 10vh;
+        height: auto;
     }
 }

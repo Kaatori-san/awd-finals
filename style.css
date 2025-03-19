@@ -1,3 +1,12 @@
+/* css reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    background-color: white;
+}
 /*Cards*/
 .shell{
     padding: 80px 0;
@@ -132,7 +141,7 @@
     font-weight: bold;;
 }
 
-.buy-btn{
+.buy-btn {
     display: block;
     color: #212121;
     text-align: center;
@@ -143,11 +152,29 @@
     border-radius: 50%;
     border: 1px solid #212121;
     transition: all 0.2s ease-in-out;
+
+    #cart{
+        width: 25px;
+        height: auto;
+        text-align: center;
+    }
 }
 
 .buy-btn:hover, .buy-btn:active, .buy-btn:focus{
     border-color: #313131;
-    background: #ddd;
+    scale: 1.05;
+    opacity: 0.8;
     color: #fff;
     text-decoration: none;
+}
+#hero {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+  
+#carousel-img img {
+    width: auto;
+    height: 75vh;
+    object-fit: cover;
 }
