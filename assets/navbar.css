@@ -4,19 +4,23 @@
     z-index: 100;
     background-color: whitesmoke;
     font: 700 3vh 'Poppins', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-#navbarTogglerDemo02 {
-    margin-right: 2vh;
-}
+
 #gtz-logo {
     margin-left: 2vh;
     width: 10vh;
     height: auto;
 }
+.nav-item {
+    margin-right: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 @media screen and (max-width: 990px) {
     #navbar {
-        padding-left: 1vh;
         font: 700 2.5vh 'Poppins', sans-serif;
     }
     
@@ -27,5 +31,11 @@
         margin-left: 0.5vh;
         width: 10vh;
         height: auto;
+    }
+    .nav-item {
+        margin-right: 2vh;
+        display: flex;
+        justify-content: left;
+        align-items: left;
     }
 }
