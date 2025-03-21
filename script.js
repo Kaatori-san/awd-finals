@@ -23,3 +23,12 @@ document.addEventListener("DOMContentLoaded", function(){
     showMoreBtn.textContent =isHidden ? "Show Less" : "Show More"
   });
 });
+
+// show login
+function showLogin() {
+  document.getElementById("login").style.display = "block";
+}
+
+function closeLogin() {
+  document.getElementById("login").style.display = "none";
+}
