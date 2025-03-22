@@ -8,18 +8,20 @@ function myFunction() {
   }
 }
 
-//show more
-document.addEventListener("DOMContentLoaded", function(){
-  const showMoreBtn = document.getElementById("show-more-btn");
-  const extraCards = document.querySelectorAll(".extra-card");
+//product carousel
+const productContainers = [...document.querySelectorAll('.product-container')];
+const nextBtn = [...document.querySelectorAll('.next-button')];
+const prevBtn = [...document.querySelectorAll('.prev-button')];
 
-  showMoreBtn.addEventListener("click", function(){
-    const isHidden = extraCards[0].classList.contains("d-none");
+productContainers.forEach((item, i)=>{
+  let containerDimensions = item.getBoundingClientRect();
+  let containerWidth = containerDimensions.width;
 
-    extraCards.forEach(card => {
-      card.classList.toggle("d-none");
-    });
+  nextBtn[i].addEventListener('click', ()=>{
+    item.scrollLeft += containerWidth;
+  })
 
-    showMoreBtn.textContent =isHidden ? "Show Less" : "Show More"
-  });
+  prevBtn[i].addEventListener('click', ()=>{
+    item.scrollLeft -= containerWidth;
+  })
 });
