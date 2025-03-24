@@ -200,8 +200,8 @@
   
 #carousel-img img {
     width: auto;
-    height: 75vh;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
 }
 
 /*Show more/show less btn*/
@@ -219,4 +219,11 @@
 #show-more-btn:hover{
     background-color: #ddd;
     color: #212121;
+}
+
+@media screen and (max-width: 990px) {
+    .product{
+        width: auto;
+        height: auto;
+    }
 }

@@ -14,7 +14,9 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- ajax -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <!-- tab icon -->
@@ -25,40 +27,13 @@
 <body>
     <!-- navbar -->
     <script src="../assets/js/navbar.js"></script>
-    <div id="navbar"></div>
-    <!-- login -->
-    <section id="login">
-        <div class="container">
-            <div id="login-modal" class="row">
-                <div class="card">
-                    <div class="card-body">
-
-                        <h2 class="fw-bold">Login</h2>
-                        <p class="text-muted">Please enter your login and password!</p>
-
-                        <div class="form-outline">
-                            <input type="email" id="typeEmailX" class="form-control" />
-                            <label for="typeEmailX">Email</label>
-                        </div>
-
-                        <div class="form-outline">
-                            <input type="password" id="typePasswordX" class="form-control" />
-                            <label for="typePasswordX">Password</label>
-                        </div>
-
-                        <p class="small"><a href="#">Forgot password?</a></p>
-
-                        <button class="btn">Login</button>
-
-                        <p>Don't have an account? <a href="#">Sign Up</a></p>
-
-                        <button class="btn" onclick="closeLogin()">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="filter-section">
+    <div id="navbar" data-aos="fade-down"></div>
+    <!-- login modal -->
+    <script src="../assets/js/account.js"></script>
+    <div id="login-modal"></div>
+    
+    <!-- filter -->
+    <section class="filter-section" data-aos="fade-down">
         <div class="container">
             <div class="filter-controls">
                 <button class="filter-btn"><i class="fas fa-filter"></i> Filter</button>
@@ -82,7 +57,7 @@
         </div>
     </section>
 
-    <main class="container main-content">
+    <main class="container main-content" data-aos="fade-up">
         <aside class="filters">
             <div class="filter-group">
                 <h3>Availability <i class="fas fa-chevron-up"></i></h3>
@@ -279,8 +254,9 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
     <!-- script -->
-    <script src="/assets/shop.js"></script>
-    <script src="/script.js"></script>
+    <script src="../assets/js/shop.js"></script>
+    <script src="../assets/js/home.js"></script>
+    <script>AOS.init();</script>
 </body>
 
 </html>

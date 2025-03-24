@@ -25,12 +25,3 @@ productContainers.forEach((item, i)=>{
     item.scrollLeft -= containerWidth;
   })
 });
-
-// show login
-function showLogin() {
-  document.getElementById("login").style.display = "block";
-}
-
-function closeLogin() {
-  document.getElementById("login").style.display = "none";
-}
