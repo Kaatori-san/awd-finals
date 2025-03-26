@@ -119,7 +119,7 @@
 
 .product-info{
     width: 100%;
-    height: 160px;
+    height: 20vh;
     padding-top: 10px;
     display: flex;
     flex-direction: column;
@@ -128,7 +128,12 @@
 }
 
 .product-info p{
-    min-height: 60px;
+    position: relative;
+    text-align: center;
+    font-size: 2vh;
+    padding: 5px;
+    flex-grow: 10;
+    /* min-height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -136,8 +141,7 @@
     word-wrap: break-word;
     flex-grow: 1;
     max-width: 90%;
-    margin: 0 auto;
-    min-height: 50px;
+    margin: 0 auto; */
 }
 
 .product-brand{
@@ -157,7 +161,7 @@
     margin-top: auto;
 }
 
-.prev-button, .next-button{
+#prev-button, #next-button{
     border: none;
     width: 10vw;
     height: 100%;
@@ -171,27 +175,28 @@
     z-index: 8;
 }
 
-.prev-button{
+#prev-button{
     left: 0;
     transform: rotate(180deg);
 }
 
-.next-button{
+#next-button{
     right: 0;
 }
 
-.prev-button img, .next-button img{
+#prev-button img, #next-button img{
     opacity: 0.5;
     border-radius: 5px;
     background: transparent;
 }
 
-.prev-button:hover img, .next-button:hover img{
+#prev-button:hover img, #next-button:hover img{
     background-color: #ddd;
     color: #181818;
     opacity: 1;
 }
 
+/* hero carousel */
 #hero {
     width: auto;
     height: auto;
@@ -204,6 +209,15 @@
     object-fit: contain;
 }
 
+/* best seller mobile */
+#best-sellers {
+    display: none;
+}
+#bs-item {
+    width: auto;
+    height: 30vh;
+    object-fit: contain;
+}
 /*Show more/show less btn*/
 #show-more-btn{
     background-color: transparent;
@@ -225,5 +239,58 @@
     .product{
         width: auto;
         height: auto;
+    }
+
+    .product-info {
+        font-size: 10vh;
+    }
+    #best-sellers {
+        display: block;
+    }
+
+    .product{
+        display: none;
+    }
+    .product-category header{
+        display: block;
+    }
+    #prev-button, #next-button{
+        border: none;
+        width: 10vw;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ddd 100%);
+        cursor: pointer;
+        z-index: 8;
+    }
+    
+    #prev-button-mobile{
+        left: 0;
+        transform: rotate(180deg);
+    }
+    
+    #next-button-mobile{
+        right: 0;
+    }
+    
+    #prev-button-mobile img, #next-button-mobile img{
+        opacity: 0.5;
+        border-radius: 5px;
+        background: transparent;
+    }
+    
+    #prev-button-mobile:hover img, #next-button-mobile:hover img{
+        background-color: #ddd;
+        color: #181818;
+        opacity: 1;
+    }
+
+    .carousel-indicators{
+        border-radius: 1.2vh;
+        opacity: 0.5;
     }
 }

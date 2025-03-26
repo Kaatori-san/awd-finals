@@ -10,8 +10,8 @@ function myFunction() {
 
 //product carousel
 const productContainers = [...document.querySelectorAll('.product-container')];
-const nextBtn = [...document.querySelectorAll('.next-button')];
-const prevBtn = [...document.querySelectorAll('.prev-button')];
+const nextBtn = [...document.querySelectorAll('#next-button')];
+const prevBtn = [...document.querySelectorAll('#prev-button')];
 
 productContainers.forEach((item, i)=>{
   let containerDimensions = item.getBoundingClientRect();

@@ -44,15 +44,45 @@
           <img src="./assets/img/hero 3.jpg" class="d-block w-100" alt="...">
         </div>
       </div>
-      </button>
     </div>
   </section>
   <main data-aos="fade-up">
+  <!-- test mobile -->
+    <section id="best-sellers" data-aos="fade-down">
+      <header class="product-category">Best Sellers</header>
+      <hr>
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img id="bs-item" src="assets/img/Intel i9 14900KS.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img id="bs-item" src="assets/img/XFX Radeon 7900XT.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img id="bs-item" src="assets/img/Gigabyte RTX 5070.webp" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span aria-hidden="true"><img id="prev-button-mobile" src="assets/icons/arrow.png" alt=""></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span aria-hidden="true"><img id="next-button-mobile" src="assets/icons/arrow.png" alt=""></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+  </section>
     <section class="product">
       <header class="product-category">Best Sellers</header>
       <hr>
-      <button class="prev-button"><img src="assets/icons/arrow.png" alt=""></button>
-      <button class="next-button"><img src="assets/icons/arrow.png" alt=""></button>
+      <button id="prev-button"><img src="assets/icons/arrow.png" alt=""></button>
+      <button id="next-button"><img src="assets/icons/arrow.png" alt=""></button>
       <div class="product-container">
         <div class="product-card">
           <div class="product-img">
