@@ -57,7 +57,7 @@
         <div class="product-card">
           <div class="product-img">
             <img src="assets/img/Intel i9 14900KS.jpg" alt="" class="product-thumb">
-            <button class="card-btn">Add to Cart</button>
+            <button class="card-btn" onclick="addToCart('Intel i9 14900KS', 50000, 'assets/img/Intel i9 14900KS.jpg')">Add to Cart</button>
           </div>
           <div class="product-info">
             <h2 class="product-brand">CPU</h2>
@@ -69,7 +69,7 @@
         <div class="product-card">
           <div class="product-img">
             <img src="assets/img/XFX Radeon 7900XT.jpg" alt="" class="product-thumb">
-            <button class="card-btn">Add to Cart</button>
+            <button class="card-btn" onclick="addToCart('XFX Radeon 7900XT', 40000, 'assets/img/XFX Radeon 7900XT.jpg')">Add to Cart</button>
           </div>
           <div class="product-info">
             <h2 class="product-brand">GPU</h2>
@@ -81,7 +81,7 @@
         <div class="product-card">
           <div class="product-img">
             <img src="assets/img/Gigabyte RTX 5070.webp" alt="" class="product-thumb">
-            <button class="card-btn">Add to Cart</button>
+            <button class="card-btn" onclick="addToCart('Gigabyte RTX 5070', 43000, 'assets/img/Gigabyte RTX 5070.webp')">Add to Cart</button>
           </div>
           <div class="product-info">
             <h2 class="product-brand">GPU</h2>
@@ -92,7 +92,7 @@
         <div class="product-card">
           <div class="product-img">
             <img src="assets/img/Ryzen 7 9800.jpg" alt="" class="product-thumb">
-            <button class="card-btn">Add to Cart</button>
+            <button class="card-btn" onclick="addToCart('Ryzen 7 9800X3D', 27000, 'assets/img/Ryzen 7 9800.jpg')">Add to Cart</button>
           </div>
           <div class="product-info">
             <h2 class="product-brand">CPU</h2>
@@ -103,7 +103,7 @@
         <div class="product-card">
           <div class="product-img">
             <img src="assets/img/MSI 4060.jpg" alt="" class="product-thumb">
-            <button class="card-btn">Add to Cart</button>
+            <button class="card-btn" onclick="addToCart('MSI 4060', 27000, 'assets/img/MSI 4060.jpg')">Add to Cart</button>
           </div>
           <div class="product-info">
             <h2 class="product-brand">GPU</h2>
@@ -114,7 +114,7 @@
         <div class="product-card">
           <div class="product-img">
             <img src="assets/img/Asus TUF Gaming VG27AQ 27.0.jpg" alt="" class="product-thumb">
-            <button class="card-btn">Add to Cart</button>
+            <button class="card-btn" onclick="addToCart('TUF Gaming VG27AQ 27.0', 27000, 'assets/img/Asus TUF Gaming VG27AQ 27.0.jpg')">Add to Cart</button>
           </div>
           <div class="product-info">
             <h2 class="product-brand">MONITOR</h2>
@@ -125,7 +125,7 @@
         <div class="product-card">
           <div class="product-img">
             <img src="assets/img/ASROck X570.jpg" alt="" class="product-thumb">
-            <button class="card-btn">Add to Cart</button>
+            <button class="card-btn" onclick="addToCart('ASROck X570', 27000, 'assets/img/ASROck X570.jpg')">Add to Cart</button>
           </div>
           <div class="product-info">
             <h2 class="product-brand">Motherboard</h2>
@@ -142,6 +142,16 @@
   <!-- JavaScript -->
   <script src="./assets/js/home.js"></script>
   <script>AOS.init();</script>
+  <script>
+    function addToCart(name, price, image) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push({ name, price, image });
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert(name + " added to cart!");
+}
+
+  </script>
 </body>
 
 </html>
