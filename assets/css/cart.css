@@ -50,7 +50,7 @@ header {
 }
 
 
-h2 {
+.contact h2, .delivery h2, .order-summary h2, .shipping-method h2, .payment h2, .billing-address h2 {
     border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
     margin-bottom: 10px;
