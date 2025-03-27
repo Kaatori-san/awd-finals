@@ -14,6 +14,7 @@ footer {
 .footer-column {
     width: 500px;
     margin-bottom: 1vh;
+    text-align: left;
 }
 
 .footer-column h3 {
@@ -44,6 +45,7 @@ footer {
 
 .social-links {
     display: flex;
+    justify-content: left;
     margin-bottom: 2vh;
 }
 
@@ -62,7 +64,6 @@ footer {
 
 .social-links a:hover {
     background-color: #000;
-    /* Changed from green to black */
 }
 
 .newsletter {
@@ -81,7 +82,6 @@ footer {
 .newsletter button {
     padding: 8px 15px;
     background-color: #000;
-    /* Changed from green to black */
     color: white;
     border: none;
     border-radius: 0 4px 4px 0;
@@ -97,17 +97,22 @@ footer {
 .footer-bottom {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding-top: 20px;
     border-top: 1px solid #444;
 }
 
 .footer-bottom p {
+    margin: 0 0 1vh 0;
     font-size: 14px;
     color: #999;
 }
-
+.footer-links {
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+}
 .footer-links a {
     margin-left: 15px;
     font-size: 14px;
