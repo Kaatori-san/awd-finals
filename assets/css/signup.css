@@ -1,9 +1,9 @@
 body,
 html {
-    background-image: url('./assets/img/gtz-logo.png') !important;
+    background-image: url('../img/gtz-logo.png') !important;
     background-color: rgba(0, 0, 0, 0.700) !important;
+    
 }
-
 #signup {
     display: block;
     position: fixed;
@@ -30,6 +30,7 @@ html {
 }
 
 .card {
+    z-index: 500;
     background-color: #1e1e2f;
     color: white;
     border-radius: 1rem;
