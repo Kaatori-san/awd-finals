@@ -1,6 +1,6 @@
 body,
 html {
-    background-image: url('/assets/img/gtz-logo.png') !important;
+    background-image: url('./assets/img/gtz-logo.png') !important;
     background-color: rgba(0, 0, 0, 0.700) !important;
 }
 
