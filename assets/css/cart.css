@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('/assets/img/hero 3.jpg');
+    background-image: url('../img/hero\ 3.jpg');
 }
 
 /* Centering the checkout form */
