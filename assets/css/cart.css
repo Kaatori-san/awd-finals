@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('/assets/img/hero 3.jpg');
+    background-image: url('../img/hero 3.jpg');
 }
 
 /* Centering the checkout form */
@@ -11,7 +11,6 @@ main {
     max-width: 1000px;
     margin: 20px auto;
     padding: 20px;
-    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
@@ -19,14 +18,25 @@ main {
 
 /* Left and Right Sections */
 .left-section {
-    width: 80%;
-    padding-right: 120px;
+    /* border-radius: 2vh;
+    background-color: white;
+    width: 70vw;
+    padding: 2vw;
+    margin-right: 5vw; */
+    background-color: white;
+    padding: 2vh;
+    border-radius: 1vh 0vh 0vh 1vh;
 }
 
 .right-section {
-    width: 35%;
-    padding: 20px;
-    border-radius: 8px;
+    /* width: 35%;
+    background-color: white;
+    border-radius: 2vh; */
+    background-color: white;
+    padding: 2vh;
+    border-radius: 0vh 1vh 1vh 0vh;
+    width: 70vw;
+
 }
 
 /* Header */
@@ -39,12 +49,13 @@ header {
     max-width: 150px;
 }
 
-/* Form Sections */
-section {
-    margin-bottom: 20px;
-}
 
-h2 {
+.contact h2,
+.delivery h2,
+.order-summary h2,
+.shipping-method h2,
+.payment h2,
+.billing-address h2 {
     border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
     margin-bottom: 10px;
@@ -65,22 +76,6 @@ select {
 label {
     display: block;
     margin-top: 10px;
-}
-
-/* Complete Order Button */
-.complete-order {
-    width: 100%;
-    background-color: #000000;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.complete-order:hover {
-    background-color: #adb9c5;
 }
 
 /* Footer */
@@ -141,7 +136,8 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked::before {
-    content: "\2713"; /* Unicode checkmark */
+    content: "\2713";
+    /* Unicode checkmark */
     font-size: 16px;
     color: white;
     font-weight: bold;
@@ -157,7 +153,9 @@ input[type="checkbox"]:checked {
 }
 
 /* Style the container of radio inputs */
-.payment label, .delivery label, .billing-address label {
+.payment label,
+.delivery label,
+.billing-address label {
     display: block;
     border: 1px solid #ccc;
     padding: 10px;
@@ -168,9 +166,9 @@ input[type="checkbox"]:checked {
 }
 
 /* Style when the radio button is selected */
-.payment input[type="radio"]:checked + label,
-.delivery input[type="radio"]:checked + label,
-.billing-address input[type="radio"]:checked + label {
+.payment input[type="radio"]:checked+label,
+.delivery input[type="radio"]:checked+label,
+.billing-address input[type="radio"]:checked+label {
     border-color: #af1515;
     background-color: #f8f9fa;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
@@ -197,30 +195,64 @@ hr {
 
 @media screen and (min-width: 990px) {
     .toggle-summary {
-        display: none; /* Hide the button when screen width is greater than 1000px */
+        display: none;
+        /* Hide the button when screen width is greater than 1000px */
     }
 }
 
 
 @media screen and (max-width: 990px) {
     main {
-        flex-direction: column-reverse; /* Move right section (Order Summary) to the top */
+        flex-direction: column-reverse;
+        /* Move right section (Order Summary) to the top */
         align-items: center;
     }
 
     .right-section {
-        width: 100%; /* Full width for mobile */
-        padding: 10px;
-        display: block; /* Ensure it's visible */
+        border-radius: 1vh 1vh 0vh 0vh;
+        width: 100%;
+        /* Full width for mobile */
+        padding: 2vh;
+        display: block;
+        /* Ensure it's visible */
+        background-color: #af1515;
     }
 
     .left-section {
-        width: 100%; /* Full width for mobile */
+        border-radius: 0vh 0vh 1vh 1vh;
+        width: 100%;
+        /* Full width for mobile */
+        padding: 2vh;
+        display: block;
+        /* Ensure it's visible */
+        background-color: white;
+    }
+
+    #order-item {
+        /* make center in div */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        .card-img {
+            width: auto;
+            height: 10vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .form {
+        width: 100%;
+        /* Full width for mobile */
         padding-right: 0;
     }
-    
+
     .order-summary {
-        display: none; /* Hide order summary by default */
+        display: none;
+        /* Hide order summary by default */
     }
 
     .toggle-summary {
@@ -235,11 +267,13 @@ hr {
     }
 
     .toggle-summary:after {
-        content: "\25BC"; /* Downward arrow */
+        content: "\25BC";
+        /* Downward arrow */
         float: right;
     }
 
     .order-summary.active {
-        display: block; /* Show when active */
+        display: block;
+        /* Show when active */
     }
 }

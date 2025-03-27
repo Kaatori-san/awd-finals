@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/navbar.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/account.css">
+    <link rel="stylesheet" href="./assets/css/signup.css">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/c5945064d4.js" crossorigin="anonymous"></script>
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <!-- tab icon -->
+    <link rel="icon" type="image/x-icon" href="./assets/img/gtz-logo.png">
+    <title>Checkout</title>
+</head>
+
+<body>
+    <div #signup-bg></div>
+    <!-- navbar -->
+    <script src="assets/js/navbar.js"></script>
+    <div id="navbar" data-aos="fade-down"></div>
+    <!-- login modal -->
+    <script src="assets/js/account.js"></script>
+    <div id="login-modal"></div>
+
+    <!-- signup -->
+    <section id="signup" data-aos="fade-up">
+        <div class="container">
+            <div id="signup-modal" class="row">
+                <div class="card">
+                    <div class="card-body">
+
+                        <h2 class="fw-bold">Sign-up</h2>
+                        <p class="text-muted">Please enter your email and password!</p>
+
+                        <div class="form-outline">
+                            <input type="email" id="typeEmailX" class="form-control" />
+                            <label for="typeEmailX">Email</label>
+                        </div>
+
+                        <div class="form-outline">
+                            <input type="password" id="typePasswordX" class="form-control" />
+                            <label for="typePasswordX">Password</label>
+                        </div>
+                        <button id="signup-btn">Sign-up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/home.js"></script>
+    <script>AOS.init();</script>
+</body>
+
+</html>

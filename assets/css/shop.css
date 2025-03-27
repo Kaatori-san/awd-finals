@@ -34,7 +34,8 @@ header .container {
 }
 
 .logo {
-    color: #000; /* Changed from green to black */
+    color: #000;
+    /* Changed from green to black */
     font-size: 28px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -64,7 +65,8 @@ header .container {
     align-items: center;
 }
 
-.user-icon, .cart-icon {
+.user-icon,
+.cart-icon {
     font-size: 18px;
     color: #555;
     margin-left: 20px;
@@ -76,7 +78,8 @@ header .container {
     position: absolute;
     top: -8px;
     right: -8px;
-    background-color: #000; /* Changed from red to black */
+    background-color: #000;
+    /* Changed from red to black */
     color: white;
     font-size: 12px;
     height: 18px;
@@ -85,53 +88,6 @@ header .container {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-/* Navigation Styles */
-nav {
-    background-color: #fff;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-}
-
-nav .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li {
-    margin-right: 20px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-}
-
-.nav-links a i {
-    margin-left: 5px;
-    font-size: 12px;
-}
-
-.nav-right {
-    display: flex;
-    align-items: center;
-}
-
-.nav-right a {
-    text-decoration: none;
-    color: #333;
-    margin-left: 20px;
-    font-size: 14px;
 }
 
 /* Filter Section Styles */
@@ -146,7 +102,8 @@ nav .container {
     align-items: center;
 }
 
-.filter-controls, .view-controls {
+.filter-controls,
+.view-controls {
     display: flex;
     align-items: center;
 }
@@ -271,12 +228,13 @@ nav .container {
     border-radius: 3px;
 }
 
-.checkbox-container:hover input ~ .checkmark {
+.checkbox-container:hover input~.checkmark {
     background-color: #f5f5f5;
 }
 
-.checkbox-container input:checked ~ .checkmark {
-    background-color: #000; /* Changed from green to black */
+.checkbox-container input:checked~.checkmark {
+    background-color: #000;
+    /* Changed from green to black */
     border-color: #000;
 }
 
@@ -286,7 +244,7 @@ nav .container {
     display: none;
 }
 
-.checkbox-container input:checked ~ .checkmark:after {
+.checkbox-container input:checked~.checkmark:after {
     display: block;
 }
 
@@ -331,7 +289,7 @@ nav .container {
     outline: none;
 }
 
-.price-inputs > span {
+.price-inputs>span {
     margin: 0 10px;
 }
 
@@ -366,7 +324,8 @@ nav .container {
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    background: #000; /* Changed from green to black */
+    background: #000;
+    /* Changed from green to black */
     cursor: pointer;
     pointer-events: auto;
     margin-top: -5px;
@@ -376,7 +335,8 @@ nav .container {
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    background: #000; /* Changed from green to black */
+    background: #000;
+    /* Changed from green to black */
     cursor: pointer;
     pointer-events: auto;
     border: none;
@@ -423,7 +383,8 @@ nav .container {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #000; /* Changed from red to black */
+    background-color: #000;
+    /* Changed from red to black */
     color: white;
     padding: 3px 8px;
     border-radius: 4px;
@@ -457,7 +418,8 @@ nav .container {
 .add-to-cart {
     width: 100%;
     padding: 10px;
-    background-color: #000; /* Changed from green to black */
+    background-color: #000;
+    /* Changed from green to black */
     color: white;
     border: none;
     border-radius: 4px;
@@ -468,136 +430,17 @@ nav .container {
 }
 
 .add-to-cart:hover {
-    background-color: #333; /* Changed to dark gray */
-}
-
-/* Footer Styles */
-footer {
     background-color: #333;
-    color: #fff;
-    padding: 40px 0 20px;
+    /* Changed to dark gray */
 }
 
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-
-.footer-column {
-    width: 23%;
-    margin-bottom: 20px;
-}
-
-.footer-column h3 {
-    font-size: 16px;
-    margin-bottom: 15px;
-    color: #fff;
-}
-
-.footer-column ul {
-    list-style: none;
-}
-
-.footer-column ul li {
-    margin-bottom: 10px;
-}
-
-.footer-column a {
-    color: #ccc;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.footer-column a:hover {
-    color: #fff; /* Changed from green to white */
-}
-
-.social-links {
-    display: flex;
-    margin-bottom: 20px;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    background-color: #444;
-    color: #fff;
-    border-radius: 50%;
-    margin-right: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.social-links a:hover {
-    background-color: #000; /* Changed from green to black */
-}
-
-.newsletter {
-    display: flex;
-    margin-top: 10px;
-}
-
-.newsletter input {
-    flex: 1;
-    padding: 8px;
-    border: none;
-    border-radius: 4px 0 0 4px;
-    font-size: 14px;
-    outline: none;
-}
-
-.newsletter button {
-    padding: 8px 15px;
-    background-color: #000; /* Changed from green to black */
-    color: white;
-    border: none;
-    border-radius: 0 4px 4px 0;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.newsletter button:hover {
-    background-color: #333; /* Changed to dark gray */
-}
-
-.footer-bottom {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 20px;
-    border-top: 1px solid #444;
-}
-
-.footer-bottom p {
-    font-size: 14px;
-    color: #999;
-}
-
-.footer-links a {
-    margin-left: 15px;
-    font-size: 14px;
-    color: #999;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: #fff; /* Changed from green to white */
-}
 
 /* Responsive Styles */
 @media (max-width: 992px) {
     .footer-column {
         width: 48%;
     }
-    
+
     .product-grid {
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     }
@@ -607,67 +450,67 @@ footer {
     header .container {
         flex-direction: column;
     }
-    
+
     .logo-container {
         margin-bottom: 15px;
     }
-    
+
     .search-container {
         width: 100%;
         margin-bottom: 15px;
     }
-    
+
     .user-actions {
         width: 100%;
         justify-content: center;
     }
-    
+
     nav .container {
         flex-direction: column;
     }
-    
+
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
         margin-bottom: 10px;
     }
-    
+
     .nav-links li {
         margin: 5px 10px;
     }
-    
+
     .nav-right {
         justify-content: center;
     }
-    
+
     .main-content {
         flex-direction: column;
     }
-    
+
     .filters {
         width: 100%;
         margin-right: 0;
         margin-bottom: 20px;
     }
-    
+
     .footer-column {
         width: 100%;
         text-align: center;
     }
-    
+
     .social-links {
         justify-content: center;
     }
-    
+
     .footer-bottom {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .footer-links {
         margin-top: 15px;
     }
-    
+
     .footer-links a {
         margin: 0 10px;
     }
@@ -677,16 +520,17 @@ footer {
     .filter-section .container {
         flex-direction: column;
     }
-    
-    .filter-controls, .view-controls {
+
+    .filter-controls,
+    .view-controls {
         width: 100%;
         justify-content: space-between;
     }
-    
+
     .view-controls {
         margin-top: 15px;
     }
-    
+
     .product-grid {
         grid-template-columns: 1fr;
     }

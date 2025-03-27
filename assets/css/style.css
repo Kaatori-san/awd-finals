@@ -5,7 +5,6 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
-    background-color: white;
 }
 
 .homepage-title {
@@ -44,7 +43,7 @@
 }
 
 /*test carousel*/
-.product {
+#product {
     position: relative;
     overflow: hidden;
     padding: 20px;
@@ -130,12 +129,7 @@
 }
 
 .product-info p {
-    position: relative;
-    text-align: center;
-    font-size: 2vh;
-    padding: 5px;
-    flex-grow: 10;
-    /* min-height: 60px;
+    min-height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -143,7 +137,8 @@
     word-wrap: break-word;
     flex-grow: 1;
     max-width: 90%;
-    margin: 0 auto; */
+    margin: 0 auto;
+
 }
 
 .product-brand {
@@ -163,7 +158,8 @@
     margin-top: auto;
 }
 
-#prev-button, #next-button {
+#prev-button,
+#next-button {
     border: none;
     width: 10vw;
     height: 100%;
@@ -193,8 +189,8 @@
     background: transparent;
 }
 
-#prev-button:hover img,
-#next-button:hover img {
+.prev-button:hover img,
+.next-button:hover img {
     background-color: #ddd;
     color: #181818;
     opacity: 1;
@@ -242,7 +238,7 @@
 }
 
 @media screen and (max-width: 990px) {
-    .product {
+    #product {
         width: auto;
         height: auto;
         display: hidden;
@@ -256,27 +252,12 @@
         display: block;
     }
 
-    .product {
+    #product {
         display: none;
     }
 
     .product-category header {
         display: block;
-    }
-
-    #prev-button,
-    #next-button {
-        border: none;
-        width: 10vw;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ddd 100%);
-        cursor: pointer;
-        z-index: 8;
     }
 
     #prev-button-mobile {
@@ -306,5 +287,31 @@
         background-color: #2121217c;
         border-radius: 1.2vh;
         opacity: 0.7;
+    }
+
+    #fi-name{
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        word-wrap: break-word;
+        margin-bottom: 5vh;
+    }
+    #card-btn-mobile{
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px;
+        width: 90%;
+        text-transform: capitalize;
+        border: none;
+        outline: none;
+        background: #ddd;
+        border-radius: 5px;
+        transition: 0.5s;
+        cursor: pointer;
+        opacity: 0;
     }
 }
