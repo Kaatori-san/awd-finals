@@ -39,7 +39,8 @@ footer {
 }
 
 .footer-column a:hover {
-    color: #fff; /* Changed from green to white */
+    color: #fff;
+    /* Changed from green to white */
 }
 
 .social-links {
@@ -61,7 +62,8 @@ footer {
 }
 
 .social-links a:hover {
-    background-color: #000; /* Changed from green to black */
+    background-color: #000;
+    /* Changed from green to black */
 }
 
 .newsletter {
@@ -80,7 +82,8 @@ footer {
 
 .newsletter button {
     padding: 8px 15px;
-    background-color: #000; /* Changed from green to black */
+    background-color: #000;
+    /* Changed from green to black */
     color: white;
     border: none;
     border-radius: 0 4px 4px 0;
@@ -90,7 +93,8 @@ footer {
 }
 
 .newsletter button:hover {
-    background-color: #333; /* Changed to dark gray */
+    background-color: #333;
+    /* Changed to dark gray */
 }
 
 .footer-bottom {
@@ -116,5 +120,6 @@ footer {
 }
 
 .footer-links a:hover {
-    color: #fff; /* Changed from green to white */
+    color: #fff;
+    /* Changed from green to white */
 }

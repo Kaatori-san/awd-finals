@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('../img/hero\ 3.jpg');
+    background-image: url('../img/hero 3.jpg');
 }
 
 /* Centering the checkout form */
@@ -50,7 +50,12 @@ header {
 }
 
 
-.contact h2, .delivery h2, .order-summary h2, .shipping-method h2, .payment h2, .billing-address h2 {
+.contact h2,
+.delivery h2,
+.order-summary h2,
+.shipping-method h2,
+.payment h2,
+.billing-address h2 {
     border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
     margin-bottom: 10px;
@@ -131,7 +136,8 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked::before {
-    content: "\2713"; /* Unicode checkmark */
+    content: "\2713";
+    /* Unicode checkmark */
     font-size: 16px;
     color: white;
     font-weight: bold;
@@ -147,7 +153,9 @@ input[type="checkbox"]:checked {
 }
 
 /* Style the container of radio inputs */
-.payment label, .delivery label, .billing-address label {
+.payment label,
+.delivery label,
+.billing-address label {
     display: block;
     border: 1px solid #ccc;
     padding: 10px;
@@ -158,9 +166,9 @@ input[type="checkbox"]:checked {
 }
 
 /* Style when the radio button is selected */
-.payment input[type="radio"]:checked + label,
-.delivery input[type="radio"]:checked + label,
-.billing-address input[type="radio"]:checked + label {
+.payment input[type="radio"]:checked+label,
+.delivery input[type="radio"]:checked+label,
+.billing-address input[type="radio"]:checked+label {
     border-color: #af1515;
     background-color: #f8f9fa;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
@@ -187,31 +195,39 @@ hr {
 
 @media screen and (min-width: 990px) {
     .toggle-summary {
-        display: none; /* Hide the button when screen width is greater than 1000px */
+        display: none;
+        /* Hide the button when screen width is greater than 1000px */
     }
 }
 
 
 @media screen and (max-width: 990px) {
     main {
-        flex-direction: column-reverse; /* Move right section (Order Summary) to the top */
+        flex-direction: column-reverse;
+        /* Move right section (Order Summary) to the top */
         align-items: center;
     }
 
     .right-section {
         border-radius: 1vh 1vh 0vh 0vh;
-        width: 100%; /* Full width for mobile */
+        width: 100%;
+        /* Full width for mobile */
         padding: 2vh;
-        display: block; /* Ensure it's visible */
+        display: block;
+        /* Ensure it's visible */
         background-color: #af1515;
     }
+
     .left-section {
         border-radius: 0vh 0vh 1vh 1vh;
-        width: 100%; /* Full width for mobile */
+        width: 100%;
+        /* Full width for mobile */
         padding: 2vh;
-        display: block; /* Ensure it's visible */
+        display: block;
+        /* Ensure it's visible */
         background-color: white;
     }
+
     #order-item {
         /* make center in div */
         display: flex;
@@ -227,13 +243,16 @@ hr {
             align-items: center;
         }
     }
+
     .form {
-        width: 100%; /* Full width for mobile */
+        width: 100%;
+        /* Full width for mobile */
         padding-right: 0;
     }
-    
+
     .order-summary {
-        display: none; /* Hide order summary by default */
+        display: none;
+        /* Hide order summary by default */
     }
 
     .toggle-summary {
@@ -248,11 +267,13 @@ hr {
     }
 
     .toggle-summary:after {
-        content: "\25BC"; /* Downward arrow */
+        content: "\25BC";
+        /* Downward arrow */
         float: right;
     }
 
     .order-summary.active {
-        display: block; /* Show when active */
+        display: block;
+        /* Show when active */
     }
 }

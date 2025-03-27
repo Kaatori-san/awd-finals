@@ -34,7 +34,8 @@ header .container {
 }
 
 .logo {
-    color: #000; /* Changed from green to black */
+    color: #000;
+    /* Changed from green to black */
     font-size: 28px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -64,7 +65,8 @@ header .container {
     align-items: center;
 }
 
-.user-icon, .cart-icon {
+.user-icon,
+.cart-icon {
     font-size: 18px;
     color: #555;
     margin-left: 20px;
@@ -76,7 +78,8 @@ header .container {
     position: absolute;
     top: -8px;
     right: -8px;
-    background-color: #000; /* Changed from red to black */
+    background-color: #000;
+    /* Changed from red to black */
     color: white;
     font-size: 12px;
     height: 18px;
@@ -99,7 +102,8 @@ header .container {
     align-items: center;
 }
 
-.filter-controls, .view-controls {
+.filter-controls,
+.view-controls {
     display: flex;
     align-items: center;
 }
@@ -224,12 +228,13 @@ header .container {
     border-radius: 3px;
 }
 
-.checkbox-container:hover input ~ .checkmark {
+.checkbox-container:hover input~.checkmark {
     background-color: #f5f5f5;
 }
 
-.checkbox-container input:checked ~ .checkmark {
-    background-color: #000; /* Changed from green to black */
+.checkbox-container input:checked~.checkmark {
+    background-color: #000;
+    /* Changed from green to black */
     border-color: #000;
 }
 
@@ -239,7 +244,7 @@ header .container {
     display: none;
 }
 
-.checkbox-container input:checked ~ .checkmark:after {
+.checkbox-container input:checked~.checkmark:after {
     display: block;
 }
 
@@ -284,7 +289,7 @@ header .container {
     outline: none;
 }
 
-.price-inputs > span {
+.price-inputs>span {
     margin: 0 10px;
 }
 
@@ -319,7 +324,8 @@ header .container {
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    background: #000; /* Changed from green to black */
+    background: #000;
+    /* Changed from green to black */
     cursor: pointer;
     pointer-events: auto;
     margin-top: -5px;
@@ -329,7 +335,8 @@ header .container {
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    background: #000; /* Changed from green to black */
+    background: #000;
+    /* Changed from green to black */
     cursor: pointer;
     pointer-events: auto;
     border: none;
@@ -376,7 +383,8 @@ header .container {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #000; /* Changed from red to black */
+    background-color: #000;
+    /* Changed from red to black */
     color: white;
     padding: 3px 8px;
     border-radius: 4px;
@@ -410,7 +418,8 @@ header .container {
 .add-to-cart {
     width: 100%;
     padding: 10px;
-    background-color: #000; /* Changed from green to black */
+    background-color: #000;
+    /* Changed from green to black */
     color: white;
     border: none;
     border-radius: 4px;
@@ -421,7 +430,8 @@ header .container {
 }
 
 .add-to-cart:hover {
-    background-color: #333; /* Changed to dark gray */
+    background-color: #333;
+    /* Changed to dark gray */
 }
 
 
@@ -430,7 +440,7 @@ header .container {
     .footer-column {
         width: 48%;
     }
-    
+
     .product-grid {
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     }
@@ -440,67 +450,67 @@ header .container {
     header .container {
         flex-direction: column;
     }
-    
+
     .logo-container {
         margin-bottom: 15px;
     }
-    
+
     .search-container {
         width: 100%;
         margin-bottom: 15px;
     }
-    
+
     .user-actions {
         width: 100%;
         justify-content: center;
     }
-    
+
     nav .container {
         flex-direction: column;
     }
-    
+
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
         margin-bottom: 10px;
     }
-    
+
     .nav-links li {
         margin: 5px 10px;
     }
-    
+
     .nav-right {
         justify-content: center;
     }
-    
+
     .main-content {
         flex-direction: column;
     }
-    
+
     .filters {
         width: 100%;
         margin-right: 0;
         margin-bottom: 20px;
     }
-    
+
     .footer-column {
         width: 100%;
         text-align: center;
     }
-    
+
     .social-links {
         justify-content: center;
     }
-    
+
     .footer-bottom {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .footer-links {
         margin-top: 15px;
     }
-    
+
     .footer-links a {
         margin: 0 10px;
     }
@@ -510,16 +520,17 @@ header .container {
     .filter-section .container {
         flex-direction: column;
     }
-    
-    .filter-controls, .view-controls {
+
+    .filter-controls,
+    .view-controls {
         width: 100%;
         justify-content: space-between;
     }
-    
+
     .view-controls {
         margin-top: 15px;
     }
-    
+
     .product-grid {
         grid-template-columns: 1fr;
     }

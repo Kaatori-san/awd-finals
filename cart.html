@@ -78,8 +78,8 @@
       </section>
       <div class="text-center btn-proceed-checkout">
         <button class="btn btn-brown btn-lg" onclick="proceedToCheckout()">Complete Order</button>
-    </div>
-    
+      </div>
+
     </section>
     <section class="right-section">
       <button class="toggle-summary">Order Summary &#9662;</button>
@@ -90,17 +90,13 @@
         <hr>
         <p id="subtotal"><strong>Subtotal: ₱0.00</strong></p>
         <p id="total"><strong>Total: ₱0.00</strong></p>
-    </div>
+      </div>
 
     </section>
   </main>
-  <footer>
-    <a href="#">Warranty Policy</a> |
-    <a href="#">Shipping Policy</a> |
-    <a href="#">Privacy Policy</a> |
-    <a href="#">Terms of Service</a> |
-    <a href="#">Contact Information</a>
-  </footer>
+  <!-- footer -->
+  <script src="assets/js/footer.js"></script>
+  <div id="footer"></div>
   <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -114,23 +110,23 @@
   <script>AOS.init();</script>
   <script>
     function loadCart() {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let cartContainer = document.getElementById("cartContainer");
-    let subtotalElement = document.getElementById("subtotal");
-    let totalElement = document.getElementById("total");
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let cartContainer = document.getElementById("cartContainer");
+      let subtotalElement = document.getElementById("subtotal");
+      let totalElement = document.getElementById("total");
 
-    cartContainer.innerHTML = "";
+      cartContainer.innerHTML = "";
 
-    if (cart.length === 0) {
+      if (cart.length === 0) {
         cartContainer.innerHTML = "<p class='text-center'>Your cart is empty.</p>";
         subtotalElement.innerHTML = "<strong>Subtotal: ₱0.00</strong>";
         totalElement.innerHTML = "<strong>Total: ₱0.00</strong>";
         return;
-    }
+      }
 
-    let subtotal = 0;
+      let subtotal = 0;
 
-    cart.forEach((item, index) => {
+      cart.forEach((item, index) => {
         subtotal += item.price;
         cartContainer.innerHTML += `
             <div id="order-item" class="cart-item card mb-3">
@@ -148,33 +144,33 @@
                 </div>
             </div>
         `;
-    });
+      });
 
-    subtotalElement.innerHTML = `<strong>Subtotal: ₱${subtotal.toFixed(2)}</strong>`;
-    totalElement.innerHTML = `<strong>Total: ₱${subtotal.toFixed(2)}</strong>`;
-}
-
-function removeFromCart(index) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.splice(index, 1);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    loadCart();
-}
-
-function proceedToCheckout() {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    if (cart.length === 0) {
-        alert("Your cart is empty! Add items before proceeding.");
-        return;
+      subtotalElement.innerHTML = `<strong>Subtotal: ₱${subtotal.toFixed(2)}</strong>`;
+      totalElement.innerHTML = `<strong>Total: ₱${subtotal.toFixed(2)}</strong>`;
     }
 
-    alert("Successfully checked out!");
-    localStorage.removeItem("cart"); // Clear cart after checkout
-    loadCart();
-}
+    function removeFromCart(index) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      loadCart();
+    }
 
-document.addEventListener("DOMContentLoaded", loadCart);
+    function proceedToCheckout() {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      if (cart.length === 0) {
+        alert("Your cart is empty! Add items before proceeding.");
+        return;
+      }
+
+      alert("Successfully checked out!");
+      localStorage.removeItem("cart"); // Clear cart after checkout
+      loadCart();
+    }
+
+    document.addEventListener("DOMContentLoaded", loadCart);
 
 
   </script>

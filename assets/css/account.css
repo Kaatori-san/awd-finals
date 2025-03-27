@@ -73,6 +73,7 @@ input {
 #login-btn:hover {
     scale: 1.025;
 }
+
 #close-btn {
     border-color: transparent;
     background-color: transparent;
