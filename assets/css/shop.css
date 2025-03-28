@@ -577,3 +577,26 @@ header .container {
 .price-input span {
     background-color: #e0e0e0;
 }
+
+
+.status-badge.best-selling,
+.status-badge.newest-arrival {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #000;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 10;
+}
+
+.status-badge.best-selling {
+    background-color: #000; /* Same as out of stock badge */
+}
+
+.status-badge.newest-arrival {
+    background-color: #000; /* Same as out of stock badge */
+}
