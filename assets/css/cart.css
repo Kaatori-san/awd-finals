@@ -64,6 +64,7 @@ header {
 /* Input Fields */
 input[type="text"],
 input[type="email"],
+input[type="tel"],
 select {
     width: 100%;
     padding: 10px;
@@ -71,6 +72,9 @@ select {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+
+
 
 /* Radio buttons and checkboxes */
 label {

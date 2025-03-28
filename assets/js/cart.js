@@ -73,3 +73,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     AOS.init();
 });
+
+
+function toggleDropdown(id, show) {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    if (show) {
+        element.style.display = "block";  
+        element.style.opacity = 0;
+        element.style.maxHeight = "0px"; // Start collapsed
+        setTimeout(() => {
+            element.style.opacity = 1;
+            element.style.maxHeight = "500px"; // Expand smoothly
+            element.style.transition = "opacity 0.3s ease, max-height 0.5s ease-in-out";
+        }, 10);
+    } else {
+        element.style.opacity = 0;
+        element.style.maxHeight = "0px"; // Collapse smoothly
+        element.style.transition = "opacity 0.3s ease, max-height 0.3s ease-out";
+        setTimeout(() => {
+            element.style.display = "none";
+        }, 300);
+    }
+}
+
