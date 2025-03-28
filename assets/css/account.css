@@ -12,6 +12,8 @@
     justify-content: center;
     align-items: center;
     border-radius: 2rem;
+    /* add shadow */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .container {
@@ -102,4 +104,24 @@ a {
 
 .text-muted {
     color: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 990px) {
+    #login {
+        width: 90%;
+        height: 70%;
+    }
+    #login-btn {
+        background-color: black;
+        color: white;
+        padding: 0.75rem 2rem;
+        border-radius:2vw;
+        cursor: pointer;
+        margin-bottom: 1rem;
+        transition: all 0.2s ease;
+    }
+    
+    #login-btn:hover {
+        scale: 1.025;
+    }
 }

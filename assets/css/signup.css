@@ -2,8 +2,9 @@ body,
 html {
     background-image: url('../img/gtz-logo.png') !important;
     background-color: rgba(0, 0, 0, 0.700) !important;
-    
+
 }
+
 #signup {
     display: block;
     position: fixed;
@@ -104,4 +105,11 @@ a {
 
 .text-muted {
     color: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 990px) {
+    #signup {
+        width: 90%;
+        height: auto;
+    }
 }

@@ -23,6 +23,17 @@
   <link rel="icon" type="image/x-icon" href="./assets/img/gtz-logo.png">
   <title>Checkout</title>
 </head>
+<style>
+  body {
+    padding-top: 10vh;
+  }
+
+  @media screen and (max-width: 990px) {
+    body {
+      padding-top: 12vh;
+    }
+  }
+</style>
 
 <body>
   <!-- navbar -->
@@ -59,12 +70,13 @@
           <label><input type="checkbox"> Save this information for next time</label>
         </form>
       </section>
-      
+
       <section class="payment">
         <h2>Payment</h2>
         <p>All transactions are secure and encrypted.</p>
         <label>
-          <input type="radio" name="payment" value="bank-deposit" checked onclick="toggleDropdown('bankDepositDropdown', true)"> 
+          <input type="radio" name="payment" value="bank-deposit" checked
+            onclick="toggleDropdown('bankDepositDropdown', true)">
           Bank Deposit
         </label>
         <div id="bankDepositDropdown" class="dropdown-input">
@@ -72,17 +84,18 @@
           <input type="text" placeholder="Account Number" required>
           <input type="text" placeholder="Account Holder Name" required>
         </div>
-      
+
         <label>
           <input type="radio" name="payment" value="cod" onclick="toggleDropdown('bankDepositDropdown', false)">
           Cash on Delivery (COD)
         </label>
       </section>
-      
+
       <section class="billing-address">
         <h2>Billing address</h2>
         <label>
-          <input type="radio" name="billing" value="same" checked onclick="toggleDropdown('billingAddressDropdown', false)"> 
+          <input type="radio" name="billing" value="same" checked
+            onclick="toggleDropdown('billingAddressDropdown', false)">
           Same as shipping address
         </label>
         <label>
