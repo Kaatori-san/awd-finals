@@ -1,25 +1,5 @@
-// DOM Elements
 document.addEventListener('DOMContentLoaded', function() {
-    // Filter groups toggle
-    const filterGroups = document.querySelectorAll('.filter-group h3');
-    filterGroups.forEach(group => {
-        group.addEventListener('click', function() {
-            const filterOptions = this.nextElementSibling;
-            const icon = this.querySelector('i');
-            
-            if (filterOptions.style.display === 'none') {
-                filterOptions.style.display = 'block';
-                icon.classList.remove('fa-chevron-down');
-                icon.classList.add('fa-chevron-up');
-            } else {
-                filterOptions.style.display = 'none';
-                icon.classList.remove('fa-chevron-up');
-                icon.classList.add('fa-chevron-down');
-            }
-        });
-    });
-
-    // Price range slider
+    // DOM Elements
     const rangeMin = document.querySelector('.range-min');
     const rangeMax = document.querySelector('.range-max');
     const minPriceInput = document.querySelectorAll('.price-input input')[0];
@@ -53,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             rangeMin.value = maxValue - 1000;
         }
         
-        minPriceInput.value = rangeMin.value;
+        minPriceInput.value = Math.round((minValue / 100000) * 99950);
         updateSliderTrack();
         filterProductsByPrice();
     });
@@ -66,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
             rangeMax.value = minValue + 1000;
         }
         
-        maxPriceInput.value = rangeMax.value;
+        maxPriceInput.value = Math.round((maxValue / 100000) * 99950);
         updateSliderTrack();
         filterProductsByPrice();
     });
@@ -80,7 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
             minPriceInput.value = maxValue - 1000;
         }
         
-        rangeMin.value = minPriceInput.value;
+        // Convert price to slider range
+        rangeMin.value = Math.round((minValue / 99950) * 100000);
         updateSliderTrack();
         filterProductsByPrice();
     });
@@ -93,7 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
             maxPriceInput.value = minValue + 1000;
         }
         
-        rangeMax.value = maxPriceInput.value;
+        // Convert price to slider range
+        rangeMax.value = Math.round((maxValue / 99950) * 100000);
         updateSliderTrack();
         filterProductsByPrice();
     });
@@ -106,7 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const productCards = document.querySelectorAll('.product-card');
         productCards.forEach(card => {
             const priceText = card.querySelector('.price').textContent;
-            const price = parseInt(priceText.replace(/[^\d]/g, ''));
+            // Remove peso sign and commas, then parse to integer
+            const price = parseInt(priceText.replace('₱', '').replace(/,/g, ''));
             
             if (price >= minPrice && price <= maxPrice) {
                 if (!card.classList.contains('hidden-by-availability')) {
@@ -117,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
     // View buttons
     const listViewBtn = document.querySelector('.list-view');
     const gridViewBtn = document.querySelector('.grid-view');
