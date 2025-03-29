@@ -75,8 +75,7 @@
         <h2>Payment</h2>
         <p>All transactions are secure and encrypted.</p>
         <label>
-          <input type="radio" name="payment" value="bank-deposit" checked
-            onclick="toggleDropdown('bankDepositDropdown', true)">
+          <input type="radio" name="payment" value="bank-deposit" onclick="toggleDropdown('bankDepositDropdown', true)">
           Bank Deposit
         </label>
         <div id="bankDepositDropdown" class="dropdown-input">
@@ -116,12 +115,11 @@
 
       <div class="order-summary">
         <h2>Order Summary</h2>
-        <div id="cartContainer"></div> <!-- This will hold dynamically added items -->
+        <div id="cartContainer"></div>
         <hr>
         <p id="subtotal"><strong>Subtotal: ₱0.00</strong></p>
         <p id="total"><strong>Total: ₱0.00</strong></p>
       </div>
-
     </section>
   </main>
   <!-- footer -->

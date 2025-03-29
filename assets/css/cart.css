@@ -36,7 +36,7 @@ main {
     padding: 2vh;
     border-radius: 0vh 1vh 1vh 0vh;
     width: 70vw;
-
+    height: fit-content;
 }
 
 /* Header */
@@ -269,12 +269,11 @@ hr {
         cursor: pointer;
         font-size: 18px;
     }
-
-    .toggle-summary:after {
+    
+    /* .toggle-summary:after {
         content: "\25BC";
-        /* Downward arrow */
         float: right;
-    }
+    } */
 
     .order-summary.active {
         display: block;
