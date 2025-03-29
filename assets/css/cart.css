@@ -197,11 +197,11 @@ hr {
     margin: 10px 0;
 }
 
-.card-title{
+.card-title {
     font-size: 2.5vh;
 }
 
-.card-text{
+.card-text {
     font-size: 3vh;
     font-size: 1vw;
 }
@@ -213,6 +213,15 @@ hr {
     }
 }
 
+@media screen and (min-width: 991px) {
+    .order-summary {
+        display: block !important;
+        overflow: hidden;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
+        opacity: 1 !important;
+        max-height: fit-content !important;
+    }
+}
 
 @media screen and (max-width: 990px) {
     main {
@@ -278,7 +287,7 @@ hr {
         cursor: pointer;
         font-size: 18px;
     }
-    
+
     /* .toggle-summary:after {
         content: "\25BC";
         float: right;
@@ -289,12 +298,12 @@ hr {
         /* Show when active */
     }
 
-    .card-title{
+    .card-title {
         font-size: 3vh;
     }
 
-    .card-text{
+    .card-text {
         font-size: 2.5vh;
     }
-    
+
 }
