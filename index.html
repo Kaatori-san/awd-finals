@@ -251,17 +251,20 @@
                 button.innerText = "Add to Cart";
             }, 2000);
         }
-    });
 
-    let carouselButton = document.getElementById("card-btn-mobile");
-    if (carouselButton && carouselButton.onclick.toString().includes(name)) {
-        carouselButton.textContent = "Added to Cart!";
-        carouselButton.disabled = true;
-        setTimeout(() => {
-                button.innerText = "Add to Cart";
-            }, 2000);
+        let carouselButton = document.getElementById("card-btn-mobile");
+          if (carouselButton) {
+              carouselButton.textContent = "Added to Cart!";
+              carouselButton.disabled = true;
+
+              setTimeout(() => {
+                  carouselButton.textContent = "Add to Cart";
+                  carouselButton.disabled = false;
+              }, 2000);
+          }
+    });
     }
-  }
+
 
 
   </script>
