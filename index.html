@@ -239,12 +239,30 @@
   <script>AOS.init();</script>
   <script>
     function addToCart(name, price, image) {
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
-      cart.push({ name, price, image });
-      localStorage.setItem("cart", JSON.stringify(cart));
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push({ name, price, image });
+    localStorage.setItem("cart", JSON.stringify(cart));
 
-      alert(name + " added to cart!");
+    document.querySelectorAll(".card-btn").forEach(button => {
+        if (button.onclick.toString().includes(name)) {
+            button.textContent = "Added to Cart!";
+            button.disabled = true;
+            setTimeout(() => {
+                button.innerText = "Add to Cart";
+            }, 2000);
+        }
+    });
+
+    let carouselButton = document.getElementById("card-btn-mobile");
+    if (carouselButton && carouselButton.onclick.toString().includes(name)) {
+        carouselButton.textContent = "Added to Cart!";
+        carouselButton.disabled = true;
+        setTimeout(() => {
+                button.innerText = "Add to Cart";
+            }, 2000);
     }
+  }
+
 
   </script>
 </body>

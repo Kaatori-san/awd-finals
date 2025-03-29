@@ -232,13 +232,24 @@
     <script src="assets/js/home.js"></script>
     <script>AOS.init();</script>
     <script>
-        function addToCart(name, price, image) {
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            cart.push({ name, price, image });
-            localStorage.setItem("cart", JSON.stringify(cart));
+    function addToCart(name, price, image) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push({ name, price, image });
+    localStorage.setItem("cart", JSON.stringify(cart));
 
-            alert(name + " added to cart!");
+    let buttons = document.querySelectorAll(".add-to-cart");
+    buttons.forEach(button => {
+        if (button.innerText === "Add to Cart" && button.onclick.toString().includes(name)) {
+            button.innerText = "Added to Cart";
+
+            setTimeout(() => {
+                button.innerText = "Add to Cart";
+            }, 2000);
         }
+    });
+}
+
+
 
     </script>
 </body>

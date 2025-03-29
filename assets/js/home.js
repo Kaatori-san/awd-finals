@@ -24,4 +24,5 @@ productContainers.forEach((item, i)=>{
   prevBtn[i].addEventListener('click', ()=>{
     item.scrollLeft -= containerWidth;
   })
+  
 });
