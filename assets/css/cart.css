@@ -18,20 +18,12 @@ main {
 
 /* Left and Right Sections */
 .left-section {
-    /* border-radius: 2vh;
-    background-color: white;
-    width: 70vw;
-    padding: 2vw;
-    margin-right: 5vw; */
     background-color: white;
     padding: 2vh;
     border-radius: 1vh 0vh 0vh 1vh;
 }
 
 .right-section {
-    /* width: 35%;
-    background-color: white;
-    border-radius: 2vh; */
     background-color: white;
     padding: 2vh;
     border-radius: 0vh 1vh 1vh 0vh;
@@ -72,9 +64,6 @@ select {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
-
-
 
 /* Radio buttons and checkboxes */
 label {
@@ -178,6 +167,23 @@ input[type="checkbox"]:checked {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
+#place-order button{
+    scale: 1;
+    width: 100%;
+    background-color: #af1515;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+#place-order button:hover {
+    scale: 1.0125;
+}
+
 /* Order Summary */
 .order-summary {
     background: white;
@@ -209,7 +215,6 @@ hr {
 @media screen and (min-width: 990px) {
     .toggle-summary {
         display: none;
-        /* Hide the button when screen width is greater than 1000px */
     }
 }
 
@@ -226,32 +231,26 @@ hr {
 @media screen and (max-width: 990px) {
     main {
         flex-direction: column-reverse;
-        /* Move right section (Order Summary) to the top */
         align-items: center;
     }
 
     .right-section {
         border-radius: 1vh 1vh 0vh 0vh;
         width: 100%;
-        /* Full width for mobile */
         padding: 2vh;
         display: block;
-        /* Ensure it's visible */
         background-color: #af1515;
     }
 
     .left-section {
         border-radius: 0vh 0vh 1vh 1vh;
         width: 100%;
-        /* Full width for mobile */
         padding: 2vh;
         display: block;
-        /* Ensure it's visible */
         background-color: white;
     }
 
     #order-item {
-        /* make center in div */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -268,13 +267,11 @@ hr {
 
     .form {
         width: 100%;
-        /* Full width for mobile */
         padding-right: 0;
     }
 
     .order-summary {
         display: none;
-        /* Hide order summary by default */
     }
 
     .toggle-summary {
@@ -288,14 +285,8 @@ hr {
         font-size: 18px;
     }
 
-    /* .toggle-summary:after {
-        content: "\25BC";
-        float: right;
-    } */
-
     .order-summary.active {
         display: block;
-        /* Show when active */
     }
 
     .card-title {

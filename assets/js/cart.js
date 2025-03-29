@@ -106,35 +106,67 @@ function toggleDropdown(id, show) {
 }
 // Order Summary
 document.addEventListener("DOMContentLoaded", function () {
-    const toggleButton = document.querySelector(".toggle-summary");
-    const orderSummary = document.querySelector(".order-summary");
-  
-    orderSummary.style.overflow = "hidden";
-    orderSummary.style.transition = "max-height 0.4s ease, opacity 0.4s ease";
-    orderSummary.style.opacity = "0";
-    orderSummary.style.maxHeight = "0px";
-  
-    toggleButton.addEventListener("click", function () {
-      const isCollapsed = orderSummary.style.maxHeight === "0px";
-  
-      if (isCollapsed) {
-        orderSummary.style.display = "block";
-        requestAnimationFrame(() => {
-          orderSummary.style.maxHeight = `${orderSummary.scrollHeight}px`;
-          orderSummary.style.opacity = "1";
-        });
-      } else {
-        orderSummary.style.maxHeight = "0px";
-        orderSummary.style.opacity = "0";
-        setTimeout(() => {
-          if (orderSummary.style.maxHeight === "0px") {
-            orderSummary.style.display = "none";
-          }
-        }, 400);
-      }
-      toggleButton.innerHTML = isCollapsed
-        ? "Order Summary &#9652;"
-        : "Order Summary &#9662;";
-    });
+  const toggleButton = document.querySelector(".toggle-summary");
+  const orderSummary = document.querySelector(".order-summary");
+
+  orderSummary.style.overflow = "hidden";
+  orderSummary.style.transition = "max-height 0.4s ease, opacity 0.4s ease";
+  orderSummary.style.opacity = "0";
+  orderSummary.style.maxHeight = "0px";
+
+  toggleButton.addEventListener("click", function () {
+    const isCollapsed = orderSummary.style.maxHeight === "0px";
+
+    if (isCollapsed) {
+      orderSummary.style.display = "block";
+      requestAnimationFrame(() => {
+        orderSummary.style.maxHeight = `${orderSummary.scrollHeight}px`;
+        orderSummary.style.opacity = "1";
+      });
+    } else {
+      orderSummary.style.maxHeight = "0px";
+      orderSummary.style.opacity = "0";
+      setTimeout(() => {
+        if (orderSummary.style.maxHeight === "0px") {
+          orderSummary.style.display = "none";
+        }
+      }, 400);
+    }
+    toggleButton.innerHTML = isCollapsed
+      ? "Order Summary &#9652;"
+      : "Order Summary &#9662;";
   });
-  
+});
+
+// place order function
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .querySelector("#place-order button")
+    .addEventListener("click", function () {
+      placeOrder();
+    });
+});
+
+function placeOrder() {
+  if (!validateForm()) {
+    alert("Please fill in all required fields before placing your order.");
+    return;
+  }
+
+  const confirmOrder = confirm("Are you sure you want to place this order?");
+  if (confirmOrder) {
+    alert("Your order has been placed successfully!");
+    localStorage.removeItem("cartItems");
+    window.location.href = "order-confirmation.html";
+  }
+}
+
+function validateForm() {
+  const requiredFields = document.querySelectorAll("input[required]");
+  for (const field of requiredFields) {
+    if (!field.value.trim()) {
+      return false;
+    }
+  }
+  return true;
+}
