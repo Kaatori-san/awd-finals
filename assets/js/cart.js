@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <div class="col-md-4">
                             <img src="${item.image}" class="card-img" alt="${
         item.name
-      }">
+      }" style="margin: 5vh 0 5vh 0 !important; display: block;">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
