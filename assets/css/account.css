@@ -6,13 +6,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 400px;
+    padding: 5vh 2vh;
+    max-width: 20vw;
     width: 100%;
-    background-color: #ffffff05;
+    background-color: white;
     justify-content: center;
     align-items: center;
-    border-radius: 2rem;
-    /* add shadow */
+    border-radius: 1rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -22,32 +22,8 @@
     border-radius: 10rem;
 }
 
-#login-modal {
-    border-radius: 5rem;
-}
-
-.card {
-    background-color: #1e1e2f;
-    color: white;
-    border-radius: 1rem;
-    padding: 2rem;
-}
-
-.card-body {
-    text-align: center;
-}
-
-#login-title {
-    margin-bottom: 1rem;
-}
-
 p {
     margin-bottom: 1.5rem;
-}
-
-.form-outline {
-    margin-bottom: 1rem;
-    text-align: left;
 }
 
 label {
@@ -62,7 +38,7 @@ input {
     border: none;
 }
 
-#login-btn {
+#submit {
     background-color: black;
     color: white;
     padding: 0.75rem 2rem;
@@ -72,7 +48,7 @@ input {
     transition: all 0.2s ease;
 }
 
-#login-btn:hover {
+#submit:hover {
     scale: 1.025;
 }
 
@@ -91,37 +67,38 @@ input {
     color: rgba(0, 0, 0, 0.700);
 }
 
-.social-icons a {
-    color: white;
-    font-size: 1.5rem;
-    margin: 0 0.5rem;
-}
-
-a {
-    color: white;
-    text-decoration: none;
-}
-
 .text-muted {
     color: rgba(255, 255, 255, 0.7);
 }
 
 @media screen and (max-width: 990px) {
     #login {
-        width: 90%;
-        height: 70%;
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 5vh 2vh;
+        max-width: 70vw;
+        width: 100%;
+        background-color: white;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1rem;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     }
-    #login-btn {
+    #submit {
         background-color: black;
         color: white;
         padding: 0.75rem 2rem;
-        border-radius:2vw;
+        border-radius: 0.5vw;
         cursor: pointer;
         margin-bottom: 1rem;
         transition: all 0.2s ease;
     }
     
-    #login-btn:hover {
+    #submit:hover {
         scale: 1.025;
     }
 }
