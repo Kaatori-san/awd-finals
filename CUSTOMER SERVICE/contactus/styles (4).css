@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.input-field {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.space-x-4 > * + * {
+    margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .md\\:w-1\\/2 {
+        width: 100%;
+    }
+
+    .flex-col {
+        flex-direction: column;
+    }
+}
