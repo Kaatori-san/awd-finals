@@ -37,9 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">${item.name}</h5>
-                                <p class="card-text"><strong>Price: ₱${item.price.toFixed(
-                                  2
-                                )}</strong></p>
+                                <p class="card-text"><strong>Price: ₱${item.price.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong></p>
                                 <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">Remove</button>
                             </div>
                         </div>
@@ -48,10 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
     });
 
-    subtotalElement.innerHTML = `<strong>Subtotal: ₱${subtotal.toFixed(
-      2
-    )}</strong>`;
-    totalElement.innerHTML = `<strong>Total: ₱${subtotal.toFixed(2)}</strong>`;
+    totalElement.innerHTML = `<strong>Total: ₱${subtotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong>`;
   }
 
   function removeFromCart(index) {

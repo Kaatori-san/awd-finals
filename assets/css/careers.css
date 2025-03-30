@@ -4,3 +4,7 @@ body{
 .title {
 	color: #5C6AC4;
 }
+
+#logo {
+  height: 10vh;
+}
