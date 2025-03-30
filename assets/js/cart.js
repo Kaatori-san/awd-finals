@@ -9,44 +9,39 @@ document.addEventListener("DOMContentLoaded", function () {
   function loadCart() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let cartContainer = document.getElementById("cartContainer");
-    let subtotalElement = document.getElementById("subtotal");
     let totalElement = document.getElementById("total");
 
     cartContainer.innerHTML = "";
 
     if (cart.length === 0) {
-      cartContainer.innerHTML =
-        "<p class='text-center'>Your cart is empty.</p>";
-      subtotalElement.innerHTML = "<strong>Subtotal: ₱0.00</strong>";
+      cartContainer.innerHTML = "<p class='text-center'>Your cart is empty.</p>";
       totalElement.innerHTML = "<strong>Total: ₱0.00</strong>";
       return;
     }
 
-    let subtotal = 0;
+    let total = 0;
 
     cart.forEach((item, index) => {
-      subtotal += item.price;
+      total += item.price;
       cartContainer.innerHTML += `
-                <div id="order-item" class="cart-item card mb-3">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="${item.image}" class="card-img" alt="${
-        item.name
-      }" style="margin: 5vh 0 5vh 0 !important; display: block;">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">${item.name}</h5>
-                                <p class="card-text"><strong>Price: ₱${item.price.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong></p>
-                                <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">Remove</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
+        <div id="order-item" class="cart-item card mb-3">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="${item.image}" class="card-img" alt="${item.name}" style="margin: 5vh 0 5vh 0 !important; display: block;">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">${item.name}</h5>
+                <p class="card-text"><strong>Price: ₱${item.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong></p>
+                <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">Remove</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
     });
 
-    totalElement.innerHTML = `<strong>Total: ₱${subtotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong>`;
+    totalElement.innerHTML = `<strong>Total: ₱${total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong>`;
   }
 
   function removeFromCart(index) {
@@ -75,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   AOS.init();
 });
+
 
 function toggleDropdown(id, show) {
   const element = document.getElementById(id);
