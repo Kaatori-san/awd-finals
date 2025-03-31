@@ -39,6 +39,7 @@
                 <div class="sort-container">
                     <span>Sort by</span>
                     <select id="sort-select">
+                        <option value="all">All Products</option>
                         <option value="best-selling">Best selling</option>
                         <option value="price-low">Price: Low to High</option>
                         <option value="price-high">Price: High to Low</option>
@@ -220,12 +221,26 @@
                 <div class="product-card" data-availability="in-stock">
                     <div class="product-image">
                         <img src="./assets/img/ASROck X570.jpg" alt="Asrock X570">
+                        <div class="status-badge newest-arrival">Newest Arrival</div>
                     </div>
                     <div class="product-details">
                         <h3>ASrock X570 Phantom Gaming 4S ATX AM4</h3>
                         <p class="price">₱170,000.00</p>
                         <button class="add-to-cart"
                             onclick="addToCart('Asrock X570', 170000, './assets/img/ASROck X570.jpg')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-availability="in-stock">
+                    <div class="product-image">
+                        <img src="./assets/img/Ryzen 7 9800.jpg" alt="Ryzen 7 9800X3D">
+                        <div class="status-badge best-selling">Best Seller</div>
+                    </div>
+                    <div class="product-details">
+                        <h3>Ryzen 7 9800X3D 8-Core 4.2 GHz CPU</h3>
+                        <p class="price">₱27,000.00</p>
+                        <button class="add-to-cart"
+                            onclick="addToCart('Ryzen 7 9800X3D', 27000, './assets/img/Ryzen 7 9800.jpg')">Add to
                             Cart</button>
                     </div>
                 </div>

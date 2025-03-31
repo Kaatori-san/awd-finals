@@ -1,50 +1,62 @@
-// DOM Elements
 document.addEventListener("DOMContentLoaded", function () {
+  let originalProducts = [];
+
+  function initializeProducts() {
+    const productGrid = document.querySelector(".product-grid");
+    if (!productGrid) return;
+    
+    originalProducts = Array.from(document.querySelectorAll(".product-card"));
+  }
+
   function sortByBestSelling() {
     const productGrid = document.querySelector(".product-grid");
-    if (!productGrid) return; // Guard clause if product grid doesn't exist
+    if (!productGrid) return;
     
     const products = Array.from(document.querySelectorAll(".product-card"));
-    if (products.length === 0) return; // Guard clause if no products
+    if (products.length === 0) return;
 
-    // Prioritize products with 'Best Seller' badge
-    products.sort((a, b) => {
-      const aIsBestSeller = a.querySelector(".best-selling") !== null;
-      const bIsBestSeller = b.querySelector(".best-selling") !== null;
-
-      if (aIsBestSeller && !bIsBestSeller) return -1;
-      if (!aIsBestSeller && bIsBestSeller) return 1;
-      return 0;
-    });
-
-    // Remove all products
+    const bestSellerProducts = products.filter(product => 
+      product.querySelector(".best-selling") !== null
+    );
+    
     products.forEach((product) => product.remove());
 
-    // Add sorted products back
-    products.forEach((product) => {
+    bestSellerProducts.forEach((product) => {
       productGrid.appendChild(product);
     });
   }
 
-  // Call sort by best selling when page loads
+  initializeProducts();
+
   sortByBestSelling();
 
-  // Sort by select
   const sortSelect = document.getElementById("sort-select");
   if (sortSelect) {
-    // Set initial value to "best-selling" to match our default sort
     sortSelect.value = "best-selling";
     
     sortSelect.addEventListener("change", function () {
       const selectedOption = this.value;
       const productGrid = document.querySelector(".product-grid");
-      const products = Array.from(document.querySelectorAll(".product-card"));
+      
+      Array.from(productGrid.children).forEach(child => child.remove());
+      
+      let productsToProcess = [...originalProducts];
+      
+      productsToProcess = productsToProcess.filter(product => {
+        return !product.classList.contains("hidden-by-availability") &&
+               !product.classList.contains("hidden-by-price") &&
+               !product.classList.contains("hidden-by-search");
+      });
+      
+      let displayProducts = [];
 
-      // Sort products based on selection
       switch (selectedOption) {
+        case "all":
+          displayProducts = [...productsToProcess];
+          break;
+
         case "price-low":
-          products.sort((a, b) => {
-            // Fix: Correctly extract price by removing currency symbol and commas
+          displayProducts = [...productsToProcess].sort((a, b) => {
             const priceA = parseInt(
               a.querySelector(".price").textContent.replace(/[^\d]/g, "")
             );
@@ -55,8 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
           break;
         case "price-high":
-          products.sort((a, b) => {
-            // Fix: Correctly extract price by removing currency symbol and commas
+          displayProducts = [...productsToProcess].sort((a, b) => {
             const priceA = parseInt(
               a.querySelector(".price").textContent.replace(/[^\d]/g, "")
             );
@@ -67,37 +78,21 @@ document.addEventListener("DOMContentLoaded", function () {
           });
           break;
         case "newest":
-          // Prioritize products with 'Newest Arrival' badge
-          products.sort((a, b) => {
-            const aIsNew = a.querySelector(".newest-arrival") !== null;
-            const bIsNew = b.querySelector(".newest-arrival") !== null;
-
-            if (aIsNew && !bIsNew) return -1;
-            if (!aIsNew && bIsNew) return 1;
-            return 0;
-          });
+          displayProducts = productsToProcess.filter(product => 
+            product.querySelector(".newest-arrival") !== null
+          );
           break;
         case "best-selling":
-          // Prioritize products with 'Best Seller' badge
-          products.sort((a, b) => {
-            const aIsBestSeller = a.querySelector(".best-selling") !== null;
-            const bIsBestSeller = b.querySelector(".best-selling") !== null;
-
-            if (aIsBestSeller && !bIsBestSeller) return -1;
-            if (!aIsBestSeller && bIsBestSeller) return 1;
-            return 0;
-          });
+          displayProducts = productsToProcess.filter(product => 
+            product.querySelector(".best-selling") !== null
+          );
           break;
         default:
-          // Return to original order (this isn't actually needed since we handle all cases)
+          displayProducts = [...productsToProcess];
           break;
       }
 
-      // Remove all products
-      products.forEach((product) => product.remove());
-
-      // Add sorted products back
-      products.forEach((product) => {
+      displayProducts.forEach(product => {
         productGrid.appendChild(product);
       });
     });
@@ -122,107 +117,112 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-// Price range slider
-const rangeMin = document.querySelector('.range-min');
-const rangeMax = document.querySelector('.range-max');
-const minPriceInput = document.querySelectorAll('.price-input input')[0];
-const maxPriceInput = document.querySelectorAll('.price-input input')[1];
+  // Price range slider
+  const rangeMin = document.querySelector('.range-min');
+  const rangeMax = document.querySelector('.range-max');
+  const minPriceInput = document.querySelectorAll('.price-input input')[0];
+  const maxPriceInput = document.querySelectorAll('.price-input input')[1];
 
-// Initialize price range values
-minPriceInput.value = 0;
-maxPriceInput.value = 200000;
+  if (rangeMin && rangeMax && minPriceInput && maxPriceInput) {
+    // Initialize price range values
+    minPriceInput.value = 0;
+    maxPriceInput.value = 200000;
 
-// Set initial positions of slider thumbs
-rangeMin.value = 0;
-rangeMax.value = 200000;
+    // Set initial positions of slider thumbs
+    rangeMin.value = 0;
+    rangeMax.value = 200000;
 
-// Function to update slider track
-function updateSliderTrack() {
-   const percent1 = (rangeMin.value / rangeMin.max) * 100;
-   const percent2 = (rangeMax.value / rangeMax.max) * 100;
-   document.querySelector('.slider-track').style.background = 
-       `linear-gradient(to right, #ddd ${percent1}%, #000 ${percent1}%, #000 ${percent2}%, #ddd ${percent2}%)`;
-}
+    // Function to update slider track
+    function updateSliderTrack() {
+       const percent1 = (rangeMin.value / rangeMin.max) * 100;
+       const percent2 = (rangeMax.value / rangeMax.max) * 100;
+       document.querySelector('.slider-track').style.background = 
+           `linear-gradient(to right, #ddd ${percent1}%, #000 ${percent1}%, #000 ${percent2}%, #ddd ${percent2}%)`;
+    }
 
-// Update track initially
-updateSliderTrack();
+    // Update track initially
+    updateSliderTrack();
 
-// Range slider events
-rangeMin.addEventListener('input', function() {
-   const minValue = parseInt(rangeMin.value);
-   const maxValue = parseInt(rangeMax.value);
-   
-   if (minValue > maxValue - 1000) {
-       rangeMin.value = maxValue - 1000;
-   }
-   
-   minPriceInput.value = Math.round((minValue / 200000) * 200000);
-   updateSliderTrack();
-   filterProductsByPrice();
-});
-
-rangeMax.addEventListener('input', function() {
-   const minValue = parseInt(rangeMin.value);
-   const maxValue = parseInt(rangeMax.value);
-   
-   if (maxValue < minValue + 1000) {
-       rangeMax.value = minValue + 1000;
-   }
-   
-   maxPriceInput.value = Math.round((maxValue / 200000) * 200000);
-   updateSliderTrack();
-   filterProductsByPrice();
-});
-
-// Price input events
-minPriceInput.addEventListener('input', function() {
-   const minValue = parseInt(minPriceInput.value) || 0;
-   const maxValue = parseInt(maxPriceInput.value) || 200000;
-   
-   if (minValue > maxValue - 1000) {
-       minPriceInput.value = maxValue - 1000;
-   }
-   
-   // Convert price to slider range
-   rangeMin.value = Math.round((minValue / 200000) * 200000);
-   updateSliderTrack();
-   filterProductsByPrice();
-});
-
-maxPriceInput.addEventListener('input', function() {
-   const minValue = parseInt(minPriceInput.value) || 0;
-   const maxValue = parseInt(maxPriceInput.value) || 200000;
-   
-   if (maxValue < minValue + 1000) {
-       maxPriceInput.value = minValue + 1000;
-   }
-   
-   // Convert price to slider range
-   rangeMax.value = Math.round((maxValue / 200000) * 200000);
-   updateSliderTrack();
-   filterProductsByPrice();
-});
-
-// Function to filter products by price
-function filterProductsByPrice() {
-   const minPrice = parseInt(minPriceInput.value);
-   const maxPrice = parseInt(maxPriceInput.value);
-   
-   const productCards = document.querySelectorAll('.product-card');
-   productCards.forEach(card => {
-       const priceText = card.querySelector('.price').textContent;
-       // Remove peso sign and commas, then parse to integer
-       const price = parseInt(priceText.replace('₱', '').replace(/,/g, ''));
+    // Range slider events
+    rangeMin.addEventListener('input', function() {
+       const minValue = parseInt(rangeMin.value);
+       const maxValue = parseInt(rangeMax.value);
        
-       if (price >= minPrice && price <= maxPrice) {
-           if (!card.classList.contains('hidden-by-availability')) {
-               card.style.display = '';
-           }
-       } else {
-           card.style.display = 'none';
+       if (minValue > maxValue - 1000) {
+           rangeMin.value = maxValue - 1000;
        }
-   });
-}
+       
+       minPriceInput.value = Math.round((minValue / 200000) * 200000);
+       updateSliderTrack();
+       filterProductsByPrice();
+    });
+
+    rangeMax.addEventListener('input', function() {
+       const minValue = parseInt(rangeMin.value);
+       const maxValue = parseInt(rangeMax.value);
+       
+       if (maxValue < minValue + 1000) {
+           rangeMax.value = minValue + 1000;
+       }
+       
+       maxPriceInput.value = Math.round((maxValue / 200000) * 200000);
+       updateSliderTrack();
+       filterProductsByPrice();
+    });
+
+    // Price input events
+    minPriceInput.addEventListener('input', function() {
+       const minValue = parseInt(minPriceInput.value) || 0;
+       const maxValue = parseInt(maxPriceInput.value) || 200000;
+       
+       if (minValue > maxValue - 1000) {
+           minPriceInput.value = maxValue - 1000;
+       }
+       
+       // Convert price to slider range
+       rangeMin.value = Math.round((minValue / 200000) * 200000);
+       updateSliderTrack();
+       filterProductsByPrice();
+    });
+
+    maxPriceInput.addEventListener('input', function() {
+       const minValue = parseInt(minPriceInput.value) || 0;
+       const maxValue = parseInt(maxPriceInput.value) || 200000;
+       
+       if (maxValue < minValue + 1000) {
+           maxPriceInput.value = minValue + 1000;
+       }
+       
+       // Convert price to slider range
+       rangeMax.value = Math.round((maxValue / 200000) * 200000);
+       updateSliderTrack();
+       filterProductsByPrice();
+    });
+  }
+
+  // Function to filter products by price
+  function filterProductsByPrice() {
+     const minPrice = parseInt(minPriceInput.value);
+     const maxPrice = parseInt(maxPriceInput.value);
+     
+     const productCards = document.querySelectorAll('.product-card');
+     productCards.forEach(card => {
+         const priceText = card.querySelector('.price').textContent;
+         // Remove peso sign and commas, then parse to integer
+         const price = parseInt(priceText.replace('₱', '').replace(/,/g, ''));
+         
+         if (price >= minPrice && price <= maxPrice) {
+             if (!card.classList.contains('hidden-by-availability') && 
+                 !card.classList.contains('hidden-by-search')) {
+                 card.style.display = '';
+             }
+             card.classList.remove('hidden-by-price');
+         } else {
+             card.classList.add('hidden-by-price');
+             card.style.display = 'none';
+         }
+     });
+  }
 
   // View buttons
   const listViewBtn = document.querySelector(".list-view");
@@ -352,8 +352,6 @@ function filterProductsByPrice() {
 
   addToCartButtons.forEach((button) => {
     button.addEventListener("click", function () {
-      // This will be handled by the inline onclick function in your HTML
-      // But we can add the animation effect here
       const productCard = this.closest(".product-card");
       productCard.style.transform = "translateY(-10px)";
       setTimeout(() => {
@@ -381,11 +379,9 @@ function filterProductsByPrice() {
       const email = emailInput.value;
 
       if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        // Success case
         emailInput.value = "";
         alert("Thank you for subscribing to our newsletter!");
       } else {
-        // Error case
         alert("Please enter a valid email address.");
       }
     });
@@ -402,7 +398,6 @@ function searchProducts() {
     const productName = card.querySelector("h3").textContent.toLowerCase();
 
     if (productName.includes(searchTerm)) {
-      // Only show if not hidden by other filters
       if (
         !card.classList.contains("hidden-by-availability") &&
         !card.classList.contains("hidden-by-price")
