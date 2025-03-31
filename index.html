@@ -23,8 +23,6 @@
   <link rel="icon" type="image/x-icon" href="./assets/img/gtz-logo.png">
   <title>IT63 FINALS</title>
 </head>
-<style>
-</style>
 
 <body>
   <!-- navbar -->
@@ -230,34 +228,31 @@
   <script>AOS.init();</script>
   <script>
     function addToCart(name, price, image) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push({ name, price, image });
-    localStorage.setItem("cart", JSON.stringify(cart));
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name, price, image });
+      localStorage.setItem("cart", JSON.stringify(cart));
 
-    document.querySelectorAll(".card-btn").forEach(button => {
+      document.querySelectorAll(".card-btn").forEach(button => {
         if (button.onclick.toString().includes(name)) {
-            button.textContent = "Added to Cart!";
-            button.disabled = true;
-            setTimeout(() => {
-                button.innerText = "Add to Cart";
-            }, 2000);
+          button.textContent = "Added to Cart!";
+          button.disabled = true;
+          setTimeout(() => {
+            button.innerText = "Add to Cart";
+          }, 2000);
         }
 
         let carouselButton = document.getElementById("card-btn-mobile");
-          if (carouselButton) {
-              carouselButton.textContent = "Added to Cart!";
-              carouselButton.disabled = true;
+        if (carouselButton) {
+          carouselButton.textContent = "Added to Cart!";
+          carouselButton.disabled = true;
 
-              setTimeout(() => {
-                  carouselButton.textContent = "Add to Cart";
-                  carouselButton.disabled = false;
-              }, 2000);
-          }
-    });
+          setTimeout(() => {
+            carouselButton.textContent = "Add to Cart";
+            carouselButton.disabled = false;
+          }, 2000);
+        }
+      });
     }
-
-
-
   </script>
 </body>
 

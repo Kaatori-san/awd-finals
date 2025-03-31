@@ -23,6 +23,7 @@
     <link rel="icon" type="image/x-icon" href="./assets/img/gtz-logo.png">
     <title>IT63 FINALS</title>
 </head>
+
 <body>
     <!-- navbar -->
     <script src="assets/js/navbar.js"></script>
@@ -30,7 +31,6 @@
     <!-- login modal -->
     <script src="assets/js/account.js"></script>
     <div id="login-modal"></div>
-
     <!-- filter -->
     <section class="filter-section" data-aos="fade-down">
         <div class="container">
@@ -55,7 +55,6 @@
             </div>
         </div>
     </section>
-
     <main class="container main-content" data-aos="fade-up">
         <aside class="filters">
             <div class="filter-group">
@@ -94,7 +93,6 @@
                 </div>
             </div>
         </aside>
-
         <section class="products">
             <div class="product-grid">
                 <div class="product-card" data-availability="in-stock">
@@ -159,7 +157,9 @@
                     <div class="product-details">
                         <h3>Palit GeForce RTX 4060 Dual OC 8GB Graphics Card</h3>
                         <p class="price">₱19,950.00</p>
-                        <button class="add-to-cart" onclick="addToCart('Palit GeForce RTX 4060', 19950, './assets/img/4060.jpg')">Add to Cart</button>
+                        <button class="add-to-cart"
+                            onclick="addToCart('Palit GeForce RTX 4060', 19950, './assets/img/4060.jpg')">Add to
+                            Cart</button>
                     </div>
                 </div>
 
@@ -199,7 +199,9 @@
                     <div class="product-details">
                         <h3>Gigabyte RTX 4070 GAMING OC 12GB Graphics Card</h3>
                         <p class="price">₱39,995.00</p>
-                        <button class="add-to-cart" onclick="addToCart('Gigabyte RTX 4070', 39995, './assets/img/Gigabyte RTX 4070.jpg')">Add to Cart</button>
+                        <button class="add-to-cart"
+                            onclick="addToCart('Gigabyte RTX 4070', 39995, './assets/img/Gigabyte RTX 4070.jpg')">Add to
+                            Cart</button>
                     </div>
                 </div>
                 <div class="product-card" data-availability="in-stock">
@@ -209,7 +211,9 @@
                     <div class="product-details">
                         <h3>Intel Core i9-14900KS 36-Core 3.6 GHz CPU</h3>
                         <p class="price">₱50,000.00</p>
-                        <button class="add-to-cart" onclick="addToCart('Intel Core i9-14900KS', 50000, './assets/img/Intel i9 14900KS.jpg')">Add to Cart</button>
+                        <button class="add-to-cart"
+                            onclick="addToCart('Intel Core i9-14900KS', 50000, './assets/img/Intel i9 14900KS.jpg')">Add
+                            to Cart</button>
                     </div>
                 </div>
                 <div class="product-card" data-availability="in-stock">
@@ -220,7 +224,9 @@
                     <div class="product-details">
                         <h3>ASrock X570 Phantom Gaming 4S ATX AM4</h3>
                         <p class="price">₱170,000.00</p>
-                        <button class="add-to-cart" onclick="addToCart('Asrock X570', 170000, './assets/img/ASROck X570.jpg')">Add to Cart</button>
+                        <button class="add-to-cart"
+                            onclick="addToCart('Asrock X570', 170000, './assets/img/ASROck X570.jpg')">Add to
+                            Cart</button>
                     </div>
                 </div>
             </div>
@@ -241,25 +247,22 @@
     <script src="assets/js/home.js"></script>
     <script>AOS.init();</script>
     <script>
-    function addToCart(name, price, image) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push({ name, price, image });
-    localStorage.setItem("cart", JSON.stringify(cart));
+        function addToCart(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.push({ name, price, image });
+            localStorage.setItem("cart", JSON.stringify(cart));
 
-    let buttons = document.querySelectorAll(".add-to-cart");
-    buttons.forEach(button => {
-        if (button.innerText === "Add to Cart" && button.onclick.toString().includes(name)) {
-            button.innerText = "Added to Cart";
+            let buttons = document.querySelectorAll(".add-to-cart");
+            buttons.forEach(button => {
+                if (button.innerText === "Add to Cart" && button.onclick.toString().includes(name)) {
+                    button.innerText = "Added to Cart";
 
-            setTimeout(() => {
-                button.innerText = "Add to Cart";
-            }, 2000);
+                    setTimeout(() => {
+                        button.innerText = "Add to Cart";
+                    }, 2000);
+                }
+            });
         }
-    });
-}
-
-
-
     </script>
 </body>
 
