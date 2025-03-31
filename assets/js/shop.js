@@ -55,11 +55,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
    // Initialize price range values
    minPriceInput.value = 0;
-   maxPriceInput.value = 99950;
+   maxPriceInput.value = 200000;
 
    // Set initial positions of slider thumbs
    rangeMin.value = 0;
-   rangeMax.value = 100000;
+   rangeMax.value = 200000;
 
    // Function to update slider track
    function updateSliderTrack() {
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
            rangeMin.value = maxValue - 1000;
        }
        
-       minPriceInput.value = Math.round((minValue / 100000) * 99950);
+       minPriceInput.value = Math.round((minValue / 200000) * 200000);
        updateSliderTrack();
        filterProductsByPrice();
    });
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
            rangeMax.value = minValue + 1000;
        }
        
-       maxPriceInput.value = Math.round((maxValue / 100000) * 99950);
+       maxPriceInput.value = Math.round((maxValue / 200000) * 200000);
        updateSliderTrack();
        filterProductsByPrice();
    });
@@ -102,28 +102,28 @@ document.addEventListener('DOMContentLoaded', function() {
    // Price input events
    minPriceInput.addEventListener('input', function() {
        const minValue = parseInt(minPriceInput.value) || 0;
-       const maxValue = parseInt(maxPriceInput.value) || 99950;
+       const maxValue = parseInt(maxPriceInput.value) || 200000;
        
        if (minValue > maxValue - 1000) {
            minPriceInput.value = maxValue - 1000;
        }
        
        // Convert price to slider range
-       rangeMin.value = Math.round((minValue / 99950) * 100000);
+       rangeMin.value = Math.round((minValue / 200000) * 200000);
        updateSliderTrack();
        filterProductsByPrice();
    });
 
    maxPriceInput.addEventListener('input', function() {
        const minValue = parseInt(minPriceInput.value) || 0;
-       const maxValue = parseInt(maxPriceInput.value) || 99950;
+       const maxValue = parseInt(maxPriceInput.value) || 200000;
        
        if (maxValue < minValue + 1000) {
            maxPriceInput.value = minValue + 1000;
        }
        
        // Convert price to slider range
-       rangeMax.value = Math.round((maxValue / 99950) * 100000);
+       rangeMax.value = Math.round((maxValue / 200000) * 200000);
        updateSliderTrack();
        filterProductsByPrice();
    });
