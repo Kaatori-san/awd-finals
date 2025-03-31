@@ -8,8 +8,13 @@
 body {
     background-color: #f9f9f9;
     color: #333;
+    padding-top: 12vh;
 }
-
+@media screen and (max-width: 990px) {
+    body {
+        padding-top: 14vh;
+    }
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;

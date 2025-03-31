@@ -2,8 +2,15 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    padding-top: 10vh;
     padding: 0;
     background-image: url('../img/hero 3.jpg');
+}
+
+@media screen and (max-width: 990px) {
+    body {
+        padding-top: 12vh;
+    }
 }
 
 /* Centering the checkout form */
@@ -167,7 +174,7 @@ input[type="checkbox"]:checked {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-#place-order button{
+#place-order button {
     scale: 1;
     width: 100%;
     background-color: #af1515;
@@ -180,6 +187,7 @@ input[type="checkbox"]:checked {
     display: block;
     margin: 0 auto;
 }
+
 #place-order button:hover {
     scale: 1.0125;
 }
