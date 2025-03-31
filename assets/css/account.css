@@ -2,7 +2,7 @@
 #login {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 10500;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -136,8 +136,8 @@ label {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        padding: 5vh 2vh;
-        height: 480px;
+        padding: 1vh 2vh;
+        height: 490px;
         min-width: 300px;
         max-width: 600px;
         width: 20vw;
@@ -146,6 +146,12 @@ label {
         align-items: center;
         border-radius: 1rem;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+    #login header {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 0.5rem;
     }
 
     #submit {
