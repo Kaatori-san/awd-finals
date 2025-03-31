@@ -132,10 +132,11 @@ label {
     #login {
         display: none;
         position: fixed;
-        z-index: 1000;
+        z-index: 10500;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        margin-top: 5vh;
         padding: 1vh 2vh;
         height: 490px;
         min-width: 300px;
@@ -148,6 +149,7 @@ label {
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     }
     #login header {
+        padding-top: 4vh;
         font-size: 2rem;
         font-weight: 700;
         text-align: center;
