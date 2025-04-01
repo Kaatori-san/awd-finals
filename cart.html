@@ -128,6 +128,113 @@
   <script src="assets/js/cart.js"></script>
   <script src="assets/js/home.js"></script>
   <script>AOS.init();</script>
+<!-- Form validation script -->
+<script>
+  // Function to toggle dropdown visibility
+  function toggleDropdown(dropdownId, show) {
+    const dropdown = document.getElementById(dropdownId);
+    if (show) {
+      dropdown.style.display = 'block';
+      
+      // Make fields required when visible
+      const inputs = dropdown.querySelectorAll('input');
+      inputs.forEach(input => {
+        input.required = true;
+      });
+    } else {
+      dropdown.style.display = 'none';
+      
+      // Make fields not required when hidden
+      const inputs = dropdown.querySelectorAll('input');
+      inputs.forEach(input => {
+        input.required = false;
+      });
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize dropdowns based on initial selection
+    const bankDepositSelected = document.querySelector('input[name="payment"][value="bank-deposit"]').checked;
+    toggleDropdown('bankDepositDropdown', bankDepositSelected);
+    
+    const differentBillingSelected = document.querySelector('input[name="billing"][value="different"]').checked;
+    toggleDropdown('billingAddressDropdown', differentBillingSelected);
+    
+    // Get place order button
+    const placeOrderButton = document.querySelector('#place-order button');
+    
+    placeOrderButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Check if all required fields are filled
+      if (validateForm()) {
+        // If validation passes, you can submit the form or redirect
+        alert('Order placed successfully!');
+        // Here you would normally submit the form or redirect
+      } else {
+        alert('Please fill in all required fields before placing your order.');
+      }
+    });
+    
+    function validateForm() {
+      // Basic required fields (always required)
+      const email = document.querySelector('input[type="email"]');
+      const firstName = document.querySelector('input[placeholder="First name"]');
+      const lastName = document.querySelector('input[placeholder="Last name"]');
+      const address = document.querySelector('input[placeholder="Address"]');
+      const postalCode = document.querySelector('input[placeholder="Postal code"]');
+      const city = document.querySelector('input[placeholder="City"]');
+      const region = document.querySelector('input[placeholder="Region"]');
+      const phone = document.querySelector('input[placeholder="Phone"]');
+      
+      // Check if basic required fields are filled
+      if (!email.value || !firstName.value || !lastName.value || !address.value || 
+          !postalCode.value || !city.value || !region.value || !phone.value) {
+        return false;
+      }
+      
+      // Payment method fields
+      const bankDepositSelected = document.querySelector('input[name="payment"][value="bank-deposit"]').checked;
+      const codSelected = document.querySelector('input[name="payment"][value="cod"]').checked;
+      
+      // If no payment method is selected
+      if (!bankDepositSelected && !codSelected) {
+        return false;
+      }
+      
+      // Check bank deposit fields only if bank deposit is selected
+      if (bankDepositSelected) {
+        const bankName = document.querySelector('#bankDepositDropdown input[placeholder="Bank Name"]');
+        const accountNumber = document.querySelector('#bankDepositDropdown input[placeholder="Account Number"]');
+        const accountHolder = document.querySelector('#bankDepositDropdown input[placeholder="Account Holder Name"]');
+        
+        if (!bankName.value || !accountNumber.value || !accountHolder.value) {
+          return false;
+        }
+      }
+      
+      // Billing address fields
+      const differentBillingSelected = document.querySelector('input[name="billing"][value="different"]').checked;
+      
+      // Check billing address fields only if different billing address is selected
+      if (differentBillingSelected) {
+        const billingAddress = document.querySelector('#billingAddressDropdown input[placeholder="Billing Address"]');
+        const billingCity = document.querySelector('#billingAddressDropdown input[placeholder="City"]');
+        const billingRegion = document.querySelector('#billingAddressDropdown input[placeholder="Region"]');
+        const billingPhone = document.querySelector('#billingAddressDropdown input[placeholder="Phone"]');
+        
+        if (!billingAddress.value || !billingCity.value || !billingRegion.value || !billingPhone.value) {
+          return false;
+        }
+      }
+      
+      return true;
+    }
+  });
+</script>
+  
+
+  
 </body>
 
 </html>
