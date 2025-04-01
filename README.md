@@ -2,7 +2,7 @@
 ## Group Members
 - Kurt Dy
 - Lance Jason
-- Regil Requireme
+- Regil Requierme
 - Miguel Ishikawa
 - Renzo Batula
 - Beane Bas
