@@ -8,7 +8,7 @@
 body {
     background-color: #f9f9f9;
     color: #333;
-    padding-top: 12vh;
+    padding-top: 14vh;
 }
 
 @media screen and (max-width: 990px) {
@@ -504,6 +504,9 @@ header .container {
 
     .product-grid {
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+    body {
+        padding-top: 15vh;
     }
 }
 
