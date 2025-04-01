@@ -60,7 +60,14 @@ header .container {
     font-size: 14px;
     outline: none;
 }
-
+ .search-container button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
 .user-actions {
     flex: 1;
     display: flex;
@@ -176,7 +183,7 @@ header .container {
 
 /* Filters Sidebar */
 .filters {
-    width: 250px;
+    width: 300px;
     margin-right: 20px;
 }
 
@@ -274,7 +281,7 @@ header .container {
     border: 1px solid #ddd;
     border-radius: 4px;
     overflow: hidden;
-    width: 100px;
+    width: 150px;
 }
 
 .price-input span {
@@ -288,7 +295,7 @@ header .container {
     width: 100%;
     border: none;
     padding: 5px;
-    font-size: 14px;
+    font-size: 1rem;
     outline: none;
 }
 
@@ -570,6 +577,7 @@ header .container {
 .filter-group {
     background-color: #f5f5f5;
     border: 1px solid #e0e0e0;
+
 }
 
 /* Soft color for price slider and range inputs */

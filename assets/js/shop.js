@@ -360,16 +360,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Search functionality
-  const searchInput = document.querySelector(".search-container input");
-  if (searchInput) {
-    searchInput.addEventListener("keyup", function (e) {
-      if (e.key === "Enter") {
-        searchProducts();
-      }
-    });
-  }
-
   // Newsletter subscription
   const newsletterForm = document.querySelector(".newsletter");
   if (newsletterForm) {
@@ -388,14 +378,31 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Function to search products
+// search function
+const searchInput = document.querySelector("#search-input");
+const searchButton = document.querySelector(".search-btn");
+
+if (searchInput) {
+  searchInput.addEventListener("keyup", function (e) {
+    if (e.key === "Enter") {
+      searchProducts();
+    }
+  });
+}
+
+if (searchButton) {
+  searchButton.addEventListener("click", searchProducts);
+}
+
 function searchProducts() {
-  const searchInput = document.querySelector(".search-container input");
-  const searchTerm = searchInput.value.toLowerCase();
+  const searchTerm = searchInput.value.trim().toLowerCase();
   const productCards = document.querySelectorAll(".product-card");
 
   productCards.forEach((card) => {
-    const productName = card.querySelector("h3").textContent.toLowerCase();
+    const productName = card
+      .querySelector("h3")
+      .textContent.trim()
+      .toLowerCase();
 
     if (productName.includes(searchTerm)) {
       if (
