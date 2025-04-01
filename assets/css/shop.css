@@ -10,11 +10,13 @@ body {
     color: #333;
     padding-top: 12vh;
 }
+
 @media screen and (max-width: 990px) {
     body {
         padding-top: 14vh;
     }
 }
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -60,7 +62,8 @@ header .container {
     font-size: 14px;
     outline: none;
 }
- .search-container button {
+
+.search-container button {
     background-color: #000;
     color: #fff;
     border: none;
@@ -68,6 +71,7 @@ header .container {
     font-size: 14px;
     cursor: pointer;
 }
+
 .user-actions {
     flex: 1;
     display: flex;
@@ -106,36 +110,40 @@ header .container {
     border-bottom: 1px solid #eee;
 }
 
+#filter-select {
+    margin-right: 1vw;
+}
+
 .filter-section .container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
 
 .filter-controls,
+.sort-container,
 .view-controls {
     display: flex;
     align-items: center;
 }
 
-.filter-btn {
+#filter-icon,
+#sort-icon {
     background: none;
     border: none;
-    padding: 5px 10px;
+    padding: 2px 5px;
     font-size: 14px;
     cursor: pointer;
-    display: flex;
     align-items: center;
-}
-
-.filter-btn i {
     margin-right: 5px;
 }
 
 .sort-container {
     display: flex;
     align-items: center;
-    margin-left: 20px;
+    margin-left: 0px;
 }
 
 .sort-container span {
@@ -155,7 +163,7 @@ header .container {
 .view-options {
     display: flex;
     align-items: center;
-    margin-left: 20px;
+    margin-left: 0px;
 }
 
 .view-options span {
@@ -457,6 +465,36 @@ header .container {
     /* Changed to dark gray */
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .filter-section .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filter-controls,
+    .sort-container,
+    .view-controls {
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .filter-controls,
+    .sort-container,
+    .view-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    select {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
 
 /* Responsive Styles */
 @media (max-width: 992px) {
@@ -537,6 +575,10 @@ header .container {
     .footer-links a {
         margin: 0 10px;
     }
+
+    .sort-container span {
+        margin-bottom: 1vh;
+    }
 }
 
 @media (max-width: 576px) {
@@ -563,6 +605,7 @@ header .container {
 .product-card.hidden {
     display: none;
 }
+
 .product-card[data-availability="out-of-stock"] {
     opacity: 0.6;
     pointer-events: none;
@@ -618,9 +661,11 @@ header .container {
 }
 
 .status-badge.best-selling {
-    background-color: #000; /* Same as out of stock badge */
+    background-color: #000;
+    /* Same as out of stock badge */
 }
 
 .status-badge.newest-arrival {
-    background-color: #000; /* Same as out of stock badge */
+    background-color: #000;
+    /* Same as out of stock badge */
 }
