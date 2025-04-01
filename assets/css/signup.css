@@ -15,7 +15,7 @@ header {
     display: block;
     position: absolute;
     z-index: 500;
-    top: 50vh;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 5vh 2vh;
@@ -112,7 +112,7 @@ input {
         display: block;
         position: fixed;
         z-index: 1000;
-        top: 50%;
+        top: 75%;
         left: 50%;
         transform: translate(-50%, -50%);
         padding: 5vh 2vh;
